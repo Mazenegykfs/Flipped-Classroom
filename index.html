@@ -50,7 +50,7 @@
         <main class="flex-grow p-4 md:p-8">
             <!-- Introduction Section -->
             <div class="card text-gray-800">
-                <h2 class="text-2xl font-bold mb-2">Learner's Guide</h2>
+                <h2 class="text-2xl font-bold mb-2">Comprehensive Teacher's Guide</h2>
                 <p class="text-md text-gray-600 mb-6">Using a Technology-Enhanced Flipped Classroom to Improve EFL Engineering Students’ Punctuation Marks</p>
                 
                 <div class="border-t pt-4">
@@ -80,6 +80,23 @@
                     </div>
                 </div>
             </div>
+
+            <!-- Authors Section -->
+            <div class="flex flex-col lg:flex-row gap-8">
+                <!-- Author 1 Card -->
+                <div class="card flex-1">
+                    <h3 class="text-xl font-bold text-teal-800 mb-2">Dr. Nourhan Adel El-Banna</h3>
+                    <p class="text-gray-700">Lecturer of TEFL</p>
+                    <p class="text-gray-600">Faculty of Education, Kafrelshiekh University</p>
+                </div>
+                <!-- Author 2 Card -->
+                <div class="card flex-1">
+                    <h3 class="text-xl font-bold text-teal-800 mb-2">Dr. Mazen Fawzy Badawy</h3>
+                     <p class="text-gray-700">Lecturer of English</p>
+                     <p class="text-gray-600">Higher Institute of Engineering and Technology in Kafrelshiekh</p>
+                </div>
+            </div>
+
         </main>
     </div>
 
@@ -103,7 +120,6 @@
             lessons.forEach(lesson => {
                 const link = document.createElement('a');
                 link.href = lesson.url;
-                link.target = "_blank"; // Open in new tab
                 link.className = 'block p-3 rounded-lg text-gray-700 font-medium hover:bg-teal-50 hover:text-teal-800 transition-colors duration-200';
                 link.textContent = lesson.title;
                 nav.appendChild(link);
@@ -113,6 +129,4 @@
 
 </body>
 </html>
-
-
 
