@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson: Using Commas in Technical Writing</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(to bottom, #ffffff, #e0f7fa); /* White to Light Blue Gradient */
+        }
+        .header {
+            background-color: #00796b;
+            color: white;
+            padding: 1rem;
+            text-align: center;
+            font-size: 1.25rem;
+            font-weight: 600;
+        }
+        .card {
+            background-color: white;
+            border-radius: 0.75rem;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+        }
+        .btn {
+            padding: 0.5rem 1rem;
+            border-radius: 0.5rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.2s;
+            border: none;
+        }
+        .btn:hover {
+            transform: translateY(-2px);
+        }
+        .btn-green {
+            background-color: #4CAF50; /* Green */
+            color: white;
+        }
+        .btn-green:hover {
+            background-color: #45a049;
+        }
+        .btn-red {
+            background-color: #f44336; /* Red */
+            color: white;
+        }
+        .btn-red:hover {
+            background-color: #e53935;
+        }
+        h1, h2, h3 {
+            color: #004d40;
+        }
+        .correct-answer {
+            color: #2e7d32;
+            font-weight: 600;
+            background-color: #e8f5e9;
+            padding: 2px 6px;
+            border-radius: 4px;
+        }
+        .incorrect-answer {
+            color: #c62828;
+            font-weight: 600;
+            background-color: #ffebee;
+            padding: 2px 6px;
+            border-radius: 4px;
+        }
+        .explanation {
+            margin-top: 0.75rem;
+            padding: 0.75rem;
+            background-color: #eef2ff; /* Light indigo background */
+            border-left: 4px solid #4f46e5; /* Indigo border */
+            color: #3730a3;
+            border-radius: 0.25rem;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease-out, padding 0.5s ease-out;
+        }
+        .explanation.show {
+            max-height: 100px; /* Adjust as needed */
+            padding: 0.75rem;
+        }
+        /* Drag and Drop Styles */
+        .comma-draggable {
+            display: inline-block;
+            font-size: 1.5rem;
+            font-weight: bold;
+            cursor: grab;
+            padding: 0 0.5rem;
+            background-color: #c8e6c9;
+            border-radius: 50%;
+            user-select: none;
+        }
+        .drop-zone {
+            display: inline-block;
+            width: 1rem;
+            height: 1.5rem;
+            background-color: #e0f2f1;
+            border: 1px dashed #00796b;
+            border-radius: 4px;
+            margin: 0 2px;
+            transition: background-color 0.3s;
+        }
+        .drop-zone.drag-over {
+            background-color: #a7ffeb;
+        }
+        .drop-zone.correct {
+            border: 2px solid #4CAF50;
+            background-color: #e8f5e9;
+        }
+         .drop-zone.incorrect {
+            border: 2px solid #f44336;
+            background-color: #ffebee;
+        }
+    </style>
+</head>
+<body>
+
+    <header class="header">
+        Developed by Dr. Mazen Badawy – Doctorate of English Teaching & Testing
+    </header>
+
+    <div class="container mx-auto p-4 md:p-8">
+        <h1 class="text-3xl md:text-4xl font-bold text-center mb-8">Using Commas in Technical Writing</h1>
+
+        <!-- Objectives -->
+        <div class="card">
+            <h2 class="text-2xl font-bold mb-4">1. Objectives</h2>
+            <ul class="list-disc list-inside space-y-2">
+                <li>Use commas correctly to separate items in a series.</li>
+                <li>Use commas with coordinating conjunctions to join independent clauses.</li>
+                <li>Use commas to set off introductory elements from the main clause.</li>
+                <li>Use commas to set off non-essential clauses and phrases.</li>
+            </ul>
+        </div>
+
+        <!-- Review & Warm-up -->
+        <div class="grid md:grid-cols-2 gap-6">
+            <div class="card">
+                <h2 class="text-2xl font-bold mb-4">2. Review</h2>
+                <p class="mb-2">A <strong>comma (,)</strong> is a punctuation mark that indicates a brief pause in a sentence. It helps to separate ideas, phrases, and clauses, making sentences easier to read and understand.</p>
+            </div>
+            <div class="card">
+                <h2 class="text-2xl font-bold mb-4">3. Warm-up</h2>
+                <p class="mb-2">How does the comma change the meaning of this sentence?</p>
+                <p class="italic">1. The project requires experienced engineers and managers.</p>
+                <p class="italic">2. The project requires experienced engineers, and managers.</p>
+                <button id="reveal-warmup-btn" class="btn btn-green mt-2">Reveal Explanation</button>
+                <div id="warmup-explanation" class="explanation">
+                    Sentence 1 implies that both the engineers and managers must be experienced. Sentence 2 could imply that the engineers must be experienced, but the managers might not be. Commas clarify meaning!
+                </div>
+            </div>
+        </div>
+        
+        <!-- Presentation -->
+        <div class="card">
+            <h2 class="text-2xl font-bold mb-4">4. Presentation: Four Key Comma Rules</h2>
+            <div class="space-y-6">
+                <!-- Rule 1 -->
+                 <div>
+                    <h3 class="text-xl font-semibold">Rule 1: Commas in a Series</h3>
+                    <p class="mt-1">Use commas to separate three or more words, phrases, or clauses in a list.</p>
+                    <p class="mt-2 p-3 bg-gray-100 rounded-md"><b>Example:</b> The design requires steel<span class="font-bold text-blue-700">,</span> copper<span class="font-bold text-blue-700">,</span> and aluminum.</p>
+                    <p class="mt-1"><small>Note: The final comma before 'and' is called the Oxford or serial comma. In technical writing, it is highly recommended to prevent ambiguity.</small></p>
+                </div>
+                <!-- Rule 2 -->
+                <div>
+                    <h3 class="text-xl font-semibold">Rule 2: Comma Before a Coordinating Conjunction</h3>
+                    <p class="mt-1">Use a comma before a coordinating conjunction (for, and, nor, but, or, yet, so) when it joins two independent clauses.</p>
+                    <p class="mt-2 p-3 bg-gray-100 rounded-md"><b>Example:</b> The test results were positive<span class="font-bold text-blue-700">,</span> but the team decided to run a second verification.</p>
+                </div>
+                <!-- Rule 3 -->
+                <div>
+                    <h3 class="text-xl font-semibold">Rule 3: Comma After an Introductory Element</h3>
+                    <p class="mt-1">Use a comma to separate an introductory word, phrase, or clause from the main clause of the sentence.</p>
+                    <p class="mt-2 p-3 bg-gray-100 rounded-md"><b>Example:</b> After analyzing the data<span class="font-bold text-blue-700">,</span> the engineers identified the primary fault.</p>
+                </div>
+                <!-- Rule 4 -->
+                <div>
+                    <h3 class="text-xl font-semibold">Rule 4: Commas with Non-Essential Elements</h3>
+                    <p class="mt-1">Use a pair of commas to set off clauses, phrases, and words that are not essential to the meaning of the sentence.</p>
+                    <p class="mt-2 p-3 bg-gray-100 rounded-md"><b>Example:</b> The main turbine<span class="font-bold text-blue-700">,</span> which was recently serviced<span class="font-bold text-blue-700">,</span> is operating at peak efficiency.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- NEW Interactive Practice: Drag & Drop -->
+        <div class="card">
+            <h2 class="text-2xl font-bold mb-4">5. Interactive Practice: Drag & Drop</h2>
+            <div class="flex items-center space-x-4 p-4 bg-gray-100 rounded-lg">
+                <p>Drag this comma:</p>
+                <div id="comma-bank">
+                    <span class="comma-draggable" draggable="true">,</span>
+                </div>
+            </div>
+            <div id="drag-drop-sentences" class="mt-4 space-y-4 text-lg">
+                <p>1. Before starting the engine<span class="drop-zone" data-correct="true"></span> check the oil levels.</p>
+                <p>2. The system has three main parts: the sensor<span class="drop-zone" data-correct="true"></span> the processor<span class="drop-zone" data-correct="true"></span> and the actuator.</p>
+                <p>3. The schematic was clear<span class="drop-zone" data-correct="true"></span> so the technician began the assembly.</p>
+                <p>4. The new material<span class="drop-zone" data-correct="true"></span> which is lighter than aluminum<span class="drop-zone" data-correct="true"></span> is also much stronger.</p>
+            </div>
+        </div>
+
+        <!-- Practice -->
+        <div class="card">
+            <h2 class="text-2xl font-bold mb-4">6. Practice</h2>
+            <p class="mb-4">Choose the sentence that is punctuated correctly.</p>
+            <div id="practice-section" class="space-y-6">
+                <!-- Practice questions will be injected here by JS -->
+            </div>
+             <div class="mt-4 text-right">
+                <button onclick="resetSection('practice-section', practiceQuestions)" class="btn btn-red">Reset</button>
+            </div>
+        </div>
+
+        <!-- Assessment -->
+        <div class="card">
+            <h2 class="text-2xl font-bold mb-4">7. Assessment</h2>
+            <p class="mb-4">Choose the sentence that is punctuated correctly.</p>
+            <div id="assessment-section" class="space-y-6">
+                 <!-- Assessment questions will be injected here by JS -->
+            </div>
+             <div class="mt-4 text-right">
+                <button onclick="resetSection('assessment-section', assessmentQuestions)" class="btn btn-red">Reset</button>
+            </div>
+        </div>
+        
+        <!-- Assignment -->
+        <div class="card">
+            <h2 class="text-2xl font-bold mb-4">8. Assignment: Final Quiz</h2>
+            <p class="mb-4">Choose the sentence that is punctuated correctly.</p>
+            <div id="assignment-section" class="space-y-6">
+                <!-- Assignment questions will be injected here by JS -->
+            </div>
+            <div id="assignment-results" class="mt-6 text-xl font-bold text-center"></div>
+             <div class="mt-4 text-right">
+                <button onclick="resetSection('assignment-section', assignmentQuestions, true)" class="btn btn-red">Reset</button>
+            </div>
+        </div>
+
+        <!-- Export Worksheet Section -->
+        <div class="card text-center">
+            <h2 class="text-2xl font-bold mb-4">Download Worksheet</h2>
+            <p class="mb-4">Click the button below to download a text file of this lesson's exercises for offline practice.</p>
+            <button onclick="downloadWorksheet()" class="btn btn-green text-lg">Export Worksheet (.txt)</button>
+        </div>
+
+        <!-- Further Reading Section -->
+        <div class="card">
+            <h2 class="text-2xl font-bold mb-4">Further Reading & References</h2>
+            <p class="mb-4">For more detailed explanations and examples, please visit these reputable online writing resources:</p>
+            <ul class="list-disc list-inside space-y-2">
+                <li><a href="https://owl.purdue.edu/owl/general_writing/punctuation/commas/index.html" target="_blank" class="text-blue-600 hover:underline">Purdue Online Writing Lab (OWL): The Comma</a></li>
+                <li><a href="https://writing.wisc.edu/handbook/grammarpunct/commas/" target="_blank" class="text-blue-600 hover:underline">The Writer's Handbook: Commas (University of Wisconsin-Madison)</a></li>
+                <li><a href="https://writingcenter.unc.edu/tips-and-tools/commas/" target="_blank" class="text-blue-600 hover:underline">The Writing Center: Commas (UNC-Chapel Hill)</a></li>
+                <li><a href="https://www.grammarly.com/blog/comma/" target="_blank" class="text-blue-600 hover:underline">Grammarly Blog: How to Use a Comma</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        const practiceQuestions = [
+            {
+                question: "The manual includes sections on installation maintenance and troubleshooting.",
+                options: [
+                    "The manual includes sections on installation, maintenance, and troubleshooting.",
+                    "The manual includes sections on installation, maintenance and troubleshooting.",
+                    "The manual includes sections on installation maintenance, and troubleshooting."
+                ],
+                answer: 0,
+                explanation: "Rule 1: Use commas to separate three or more items in a series. The Oxford comma after 'maintenance' is standard in technical writing."
+            },
+            {
+                question: "The generator provides power but it is extremely loud.",
+                options: [
+                    "The generator provides power, but it is extremely loud.",
+                    "The generator provides power but, it is extremely loud.",
+                    "The generator provides power but it is extremely loud."
+                ],
+                answer: 0,
+                explanation: "Rule 2: A comma is needed before the coordinating conjunction 'but' because it connects two independent clauses."
+            },
+            {
+                question: "To avoid overheating we installed a new cooling fan.",
+                options: [
+                    "To avoid overheating we installed a new cooling fan.",
+                    "To avoid overheating, we installed a new cooling fan.",
+                    "To avoid, overheating we installed a new cooling fan."
+                ],
+                answer: 1,
+                explanation: "Rule 3: The phrase 'To avoid overheating' is an introductory element and must be separated from the main clause with a comma."
+            }
+        ];
+
+        const assessmentQuestions = [
+            {
+                question: "Dr. Al-Fayed the lead researcher will present the findings.",
+                options: [
+                    "Dr. Al-Fayed, the lead researcher, will present the findings.",
+                    "Dr. Al-Fayed, the lead researcher will present the findings.",
+                    "Dr. Al-Fayed the lead researcher, will present the findings."
+                ],
+                answer: 0,
+                explanation: "Rule 4: The phrase 'the lead researcher' is a non-essential element that renames Dr. Al-Fayed. It should be set off with a pair of commas."
+            },
+            {
+                question: "The software compiled without errors yet the program crashed on startup.",
+                options: [
+                    "The software compiled without errors, yet the program crashed on startup.",
+                    "The software compiled without errors yet, the program crashed on startup.",
+                    "The software compiled without errors yet the program crashed on startup."
+                ],
+                answer: 0,
+                explanation: "Rule 2: A comma is required before the conjunction 'yet' when it joins two complete sentences."
+            },
+            {
+                question: "We need a plan that is effective efficient and affordable.",
+                options: [
+                    "We need a plan that is effective, efficient, and affordable.",
+                    "We need a plan that is effective, efficient and, affordable.",
+                    "We need a plan that is effective efficient, and affordable."
+                ],
+                answer: 0,
+                explanation: "Rule 1: Commas are used to separate adjectives in a series that describe the same noun."
+            }
+        ];
+
+        const assignmentQuestions = [
+            {
+                question: "Choose the correctly punctuated sentence.",
+                options: [
+                    "Although the design was innovative, it was too expensive to produce.",
+                    "Although the design was innovative it was too expensive to produce.",
+                    "Although, the design was innovative it was too expensive to produce."
+                ],
+                answer: 0,
+                explanation: "Rule 3: A comma is needed after the introductory dependent clause 'Although the design was innovative'."
+            },
+            {
+                question: "Which sentence is INCORRECT?",
+                options: [
+                    "The first test failed, so we adjusted the parameters.",
+                    "The parts, that were ordered last week, have finally arrived.",
+                    "In 2023, the company launched three new products."
+                ],
+                answer: 1,
+                explanation: "The commas in this sentence are incorrect. The clause 'that were ordered last week' is essential to identify which parts arrived, so it should not be set off by commas."
+            },
+            {
+                question: "The engineer checked the wiring the plumbing and the ventilation system.",
+                options: [
+                    "The engineer checked the wiring, the plumbing, and the ventilation system.",
+                    "The engineer checked the wiring, the plumbing, and, the ventilation system.",
+                    "The engineer checked the wiring the plumbing, and the ventilation system."
+                ],
+                answer: 0,
+                explanation: "Rule 1: Commas must be used to separate all items in a list of three or more."
+            },
+            {
+                question: "The computer model which took hours to build produced an accurate simulation.",
+                options: [
+                    "The computer model which took hours to build produced an accurate simulation.",
+                    "The computer model, which took hours to build, produced an accurate simulation.",
+                    "The computer model, which took hours to build produced an accurate simulation."
+                ],
+                answer: 1,
+                explanation: "Rule 4: The clause 'which took hours to build' is non-essential extra information. It must be set off from the main sentence by a pair of commas."
+            }
+        ];
+        
+        let assignmentScore = 0;
+        let assignmentAnswered = 0;
+
+        function createMCQSection(containerId, questions, isAssignment = false) {
+            const container = document.getElementById(containerId);
+            container.innerHTML = '';
+            
+            questions.forEach((q, qIndex) => {
+                const qDiv = document.createElement('div');
+                let optionsHTML = '';
+                q.options.forEach((option, oIndex) => {
+                    optionsHTML += `
+                        <div class="flex items-center">
+                            <input type="radio" id="${containerId}-q${qIndex}o${oIndex}" name="${containerId}-q${qIndex}" value="${oIndex}" class="h-4 w-4 text-indigo-600 border-gray-300 focus:ring-indigo-500">
+                            <label for="${containerId}-q${qIndex}o${oIndex}" class="ml-3 block text-sm text-gray-900">${option}</label>
+                        </div>
+                    `;
+                });
+
+                qDiv.innerHTML = `
+                    <p class="font-medium text-gray-800">${qIndex + 1}. ${q.question}</p>
+                    <div id="${containerId}-feedback-q${qIndex}" class="space-y-2 mt-2">${optionsHTML}</div>
+                    <div id="${containerId}-explanation-q${qIndex}" class="explanation"></div>
+                `;
+                container.appendChild(qDiv);
+
+                const optionsContainer = document.getElementById(`${containerId}-feedback-q${qIndex}`);
+                optionsContainer.addEventListener('change', (event) => {
+                    if(event.target.type === 'radio') {
+                        handleMCQSelection(containerId, qIndex, questions, isAssignment);
+                    }
+                });
+            });
+        }
+        
+        function handleMCQSelection(containerId, qIndex, questions, isAssignment) {
+            const q = questions[qIndex];
+            const feedbackDiv = document.getElementById(`${containerId}-feedback-q${qIndex}`);
+            const selectedRadio = feedbackDiv.querySelector(`input[name="${containerId}-q${qIndex}"]:checked`);
+            
+            if (!selectedRadio) return;
+
+            const userAnswer = parseInt(selectedRadio.value);
+            const radios = feedbackDiv.querySelectorAll(`input[name="${containerId}-q${qIndex}"]`);
+            
+            radios.forEach(radio => {
+                radio.disabled = true;
+                const label = feedbackDiv.querySelector(`label[for="${radio.id}"]`);
+                label.classList.remove('correct-answer', 'incorrect-answer');
+
+                const radioValue = parseInt(radio.value);
+                if (radioValue === q.answer) {
+                    label.classList.add('correct-answer');
+                } else if (radioValue === userAnswer) {
+                    label.classList.add('incorrect-answer');
+                }
+            });
+
+            const explanationDiv = document.getElementById(`${containerId}-explanation-q${qIndex}`);
+            if (explanationDiv && q.explanation) {
+                explanationDiv.innerHTML = `<b>Explanation:</b> ${q.explanation}`;
+                explanationDiv.classList.add('show');
+            }
+
+            if(isAssignment) {
+                if(!selectedRadio.parentElement.hasAttribute('data-scored')) {
+                     if(userAnswer === q.answer) {
+                       assignmentScore++;
+                    }
+                    assignmentAnswered++;
+                    radios.forEach(r => r.parentElement.setAttribute('data-scored', 'true'));
+                }
+                const resultsDiv = document.getElementById('assignment-results');
+                resultsDiv.textContent = `Score: ${assignmentScore} out of ${questions.length}`;
+            }
+        }
+        
+        function resetSection(containerId, questions, isAssignment = false) {
+            if (isAssignment) {
+                assignmentScore = 0;
+                assignmentAnswered = 0;
+                const resultsDiv = document.getElementById('assignment-results');
+                resultsDiv.textContent = '';
+            }
+            createMCQSection(containerId, questions, isAssignment);
+        }
+
+        function formatQuestionsForWorksheet(title, questions) {
+            let text = `\n\n--- ${title} ---\n\n`;
+            text += `Instructions: Choose the sentence that is punctuated correctly.\n\n`;
+            questions.forEach((q, index) => {
+                text += `${index + 1}. ${q.question || "Choose the correctly punctuated sentence."}\n`;
+                q.options.forEach((opt, optIndex) => {
+                    text += `   ${String.fromCharCode(97 + optIndex)}) ${opt}\n`;
+                });
+                text += '\n';
+            });
+            return text;
+        }
+
+        function downloadWorksheet() {
+            let worksheetContent = `Worksheet: Using Commas in Technical Writing\n`;
+            worksheetContent += `Developed by Dr. Mazen Badawy – Doctorate of English Teaching & Testing\n`;
+            worksheetContent += `=================================================================\n\n`;
+
+            worksheetContent += `** Part 1: Key Rules **\n\n`;
+            worksheetContent += `Rule 1: Commas in a Series\n- Example: The design requires steel, copper, and aluminum.\n\n`;
+            worksheetContent += `Rule 2: Comma Before a Coordinating Conjunction\n- Example: The test results were positive, but the team decided to run a second verification.\n\n`;
+            worksheetContent += `Rule 3: Comma After an Introductory Element\n- Example: After analyzing the data, the engineers identified the primary fault.\n\n`;
+            worksheetContent += `Rule 4: Commas with Non-Essential Elements\n- Example: The main turbine, which was recently serviced, is operating at peak efficiency.\n`;
+
+            worksheetContent += formatQuestionsForWorksheet("Part 2: Practice Questions", practiceQuestions);
+            worksheetContent += formatQuestionsForWorksheet("Part 3: Assessment Questions", assessmentQuestions);
+            worksheetContent += formatQuestionsForWorksheet("Part 4: Assignment Questions", assignmentQuestions);
+
+            const blob = new Blob([worksheetContent], { type: 'text/plain;charset=utf-8' });
+            const link = document.createElement('a');
+            link.href = URL.createObjectURL(blob);
+            link.download = 'commas_worksheet.txt';
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        }
+
+
+        document.addEventListener('DOMContentLoaded', () => {
+            // Warm-up button
+            const revealBtn = document.getElementById('reveal-warmup-btn');
+            const warmupExplanation = document.getElementById('warmup-explanation');
+            revealBtn.addEventListener('click', () => {
+                warmupExplanation.classList.toggle('show');
+                revealBtn.textContent = warmupExplanation.classList.contains('show') ? 'Hide Explanation' : 'Reveal Explanation';
+            });
+
+            // Drag and Drop Logic
+            const comma = document.querySelector('.comma-draggable');
+            const dropZones = document.querySelectorAll('.drop-zone');
+
+            comma.addEventListener('dragstart', (e) => {
+                e.dataTransfer.setData('text/plain', ',');
+            });
+
+            dropZones.forEach(zone => {
+                zone.addEventListener('dragover', (e) => {
+                    e.preventDefault();
+                    zone.classList.add('drag-over');
+                });
+
+                zone.addEventListener('dragleave', () => {
+                    zone.classList.remove('drag-over');
+                });
+
+                zone.addEventListener('drop', (e) => {
+                    e.preventDefault();
+                    zone.classList.remove('drag-over');
+                    const isCorrect = zone.dataset.correct === 'true';
+                    
+                    if (zone.textContent === '') { 
+                        zone.textContent = e.dataTransfer.getData('text');
+                        zone.classList.add(isCorrect ? 'correct' : 'incorrect');
+                    }
+                });
+            });
+
+            createMCQSection('practice-section', practiceQuestions);
+            createMCQSection('assessment-section', assessmentQuestions);
+            createMCQSection('assignment-section', assignmentQuestions, true);
+        });
+
+    </script>
+
+</body>
+</html>
+

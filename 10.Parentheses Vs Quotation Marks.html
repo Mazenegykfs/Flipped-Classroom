@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson: Parentheses ( ) vs. Quotation Marks (“ ”)</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(to bottom, #ffffff, #e0f7fa); /* White to Light Blue Gradient */
+        }
+        .header {
+            background-color: #00796b;
+            color: white;
+            padding: 1rem;
+            text-align: center;
+            font-size: 1.25rem;
+            font-weight: 600;
+        }
+        .card {
+            background-color: white;
+            border-radius: 0.75rem;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+        }
+        .btn {
+            padding: 0.5rem 1rem;
+            border-radius: 0.5rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.2s;
+            border: none;
+        }
+        .btn:hover {
+            transform: translateY(-2px);
+        }
+        .btn-green {
+            background-color: #4CAF50; /* Green */
+            color: white;
+        }
+        .btn-green:hover {
+            background-color: #45a049;
+        }
+        .btn-red {
+            background-color: #f44336; /* Red */
+            color: white;
+        }
+        .btn-red:hover {
+            background-color: #e53935;
+        }
+        h1, h2, h3 {
+            color: #004d40;
+        }
+        .correct-answer {
+            color: #2e7d32;
+            font-weight: 600;
+            background-color: #e8f5e9;
+            padding: 2px 6px;
+            border-radius: 4px;
+        }
+        .incorrect-answer {
+            color: #c62828;
+            font-weight: 600;
+            background-color: #ffebee;
+            padding: 2px 6px;
+            border-radius: 4px;
+        }
+        .explanation {
+            margin-top: 0.75rem;
+            padding: 0.75rem;
+            background-color: #eef2ff; /* Light indigo background */
+            border-left: 4px solid #4f46e5; /* Indigo border */
+            color: #3730a3;
+            border-radius: 0.25rem;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease-out, padding 0.5s ease-out;
+        }
+        .explanation.show {
+            max-height: 150px; /* Adjust as needed */
+            padding: 0.75rem;
+        }
+    </style>
+</head>
+<body>
+
+    <header class="header">
+        Developed by Dr. Mazen Badawy – Doctorate of English Teaching & Testing
+    </header>
+
+    <div class="container mx-auto p-4 md:p-8">
+        <h1 class="text-3xl md:text-4xl font-bold text-center mb-8">Punctuation: Parentheses ( ) vs. Quotation Marks (“ ”)</h1>
+
+        <!-- Objectives -->
+        <div class="card">
+            <h2 class="text-2xl font-bold mb-4">1. Objectives</h2>
+            <ul class="list-disc list-inside space-y-2 mt-2">
+                <li>Differentiate between the function of parentheses and quotation marks.</li>
+                <li>Correctly use parentheses to enclose non-essential or supplementary information.</li>
+                <li>Correctly use quotation marks to indicate direct speech or to cite titles of short works.</li>
+                <li>Apply the correct rules for placing other punctuation marks inside or outside of parentheses and quotation marks.</li>
+            </ul>
+        </div>
+
+        <!-- Review & Warm-up -->
+        <div class="grid md:grid-cols-2 gap-6">
+            <div class="card">
+                <h2 class="text-2xl font-bold mb-4">2. Review</h2>
+                <p class="mb-2"><strong>Parentheses ( )</strong> are used to add extra, non-essential information that clarifies or elaborates on a point. They de-emphasize the text inside them. <strong>Quotation marks (“ ”)</strong> are used to show the exact words someone said or wrote.</p>
+            </div>
+            <div class="card">
+                <h2 class="text-2xl font-bold mb-4">3. Warm-up</h2>
+                <p class="mb-2">How would you punctuate this sentence to show the speaker's exact words?</p>
+                <p class="italic">The project manager said the final design is approved.</p>
+                <button id="reveal-warmup-btn" class="btn btn-green mt-2">Reveal Explanation</button>
+                <div id="warmup-explanation" class="explanation">
+                    <b>Correct Version:</b> The project manager said, “The final design is approved.”<br>
+                    Quotation marks are necessary to indicate that “The final design is approved” are the exact words spoken by the project manager.
+                </div>
+            </div>
+        </div>
+        
+        <!-- Presentation -->
+        <div class="card">
+            <h2 class="text-2xl font-bold mb-4">4. Presentation: Parentheses vs. Quotation Marks</h2>
+            <div class="space-y-6">
+                 <div>
+                    <h3 class="text-xl font-semibold">When to Use Parentheses ( )</h3>
+                    <p class="mt-1"><b>Rule:</b> Use to enclose extra information that is not essential to the main point of the sentence. This can include acronyms, dates, or asides.</p>
+                    <p class="mt-1 p-2 bg-gray-100 rounded-md">The International Organization for Standardization <span class="font-bold text-blue-700">(ISO)</span> provides the guidelines.</p>
+                    <p class="mt-1 p-2 bg-gray-100 rounded-md">The final report <span class="font-bold text-blue-700">(due Friday)</span> must be submitted to the client.</p>
+                </div>
+                <div>
+                    <h3 class="text-xl font-semibold">When to Use Quotation Marks (“ ”)</h3>
+                    <p class="mt-1"><b>Rule 1 (Direct Quotes):</b> Use to enclose the exact words of a speaker or a source.</p>
+                    <p class="mt-1 p-2 bg-gray-100 rounded-md">The lead engineer stated, <span class="font-bold text-blue-700">“We need to increase the safety margin.”</span></p>
+                     <p class="mt-1"><b>Rule 2 (Punctuation Inside):</b> Commas and periods almost always go <em>inside</em> the closing quotation mark in American English.</p>
+                    <p class="mt-1 p-2 bg-gray-100 rounded-md">He referred to the problem as a <span class="font-bold text-blue-700">“minor setback.”</span></p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Interactive Practice: Parentheses or Quotation Marks? -->
+        <div class="card">
+            <h2 class="text-2xl font-bold mb-4">5. Interactive Practice: Choose the Punctuation</h2>
+            <p class="mb-4">For each sentence, identify the correct punctuation that is needed.</p>
+            <div id="interactive-practice-section" class="space-y-6">
+                <!-- Questions will be injected here by JS -->
+            </div>
+             <div class="mt-4 text-right">
+                <button onclick="resetSection('interactive-practice-section', interactivePracticeQuestions)" class="btn btn-red">Reset</button>
+            </div>
+        </div>
+
+        <!-- Practice -->
+        <div class="card">
+            <h2 class="text-2xl font-bold mb-4">6. Practice</h2>
+            <p class="mb-4">Choose the option that is punctuated correctly.</p>
+            <div id="practice-section" class="space-y-6">
+                <!-- Practice questions will be injected here by JS -->
+            </div>
+             <div class="mt-4 text-right">
+                <button onclick="resetSection('practice-section', practiceQuestions)" class="btn btn-red">Reset</button>
+            </div>
+        </div>
+
+        <!-- Assessment -->
+        <div class="card">
+            <h2 class="text-2xl font-bold mb-4">7. Assessment</h2>
+            <p class="mb-4">Choose the option that is punctuated correctly and most professionally.</p>
+            <div id="assessment-section" class="space-y-6">
+                 <!-- Assessment questions will be injected here by JS -->
+            </div>
+             <div class="mt-4 text-right">
+                <button onclick="resetSection('assessment-section', assessmentQuestions)" class="btn btn-red">Reset</button>
+            </div>
+        </div>
+        
+        <!-- Assignment -->
+        <div class="card">
+            <h2 class="text-2xl font-bold mb-4">8. Assignment: Final Quiz</h2>
+            <p class="mb-4">Choose the option that is punctuated correctly.</p>
+            <div id="assignment-section" class="space-y-6">
+                <!-- Assignment questions will be injected here by JS -->
+            </div>
+            <div id="assignment-results" class="mt-6 text-xl font-bold text-center"></div>
+             <div class="mt-4 text-right">
+                <button onclick="resetSection('assignment-section', assignmentQuestions, true)" class="btn btn-red">Reset</button>
+            </div>
+        </div>
+
+        <!-- Export Worksheet Section -->
+        <div class="card text-center">
+            <h2 class="text-2xl font-bold mb-4">Download Worksheet</h2>
+            <p class="mb-4">Click the button below to download a text file of this lesson's exercises for offline practice.</p>
+            <button onclick="downloadWorksheet()" class="btn btn-green text-lg">Export Worksheet (.txt)</button>
+        </div>
+
+        <!-- Further Reading Section -->
+        <div class="card">
+            <h2 class="text-2xl font-bold mb-4">Further Reading & References</h2>
+            <p class="mb-4">For more detailed explanations and examples, please visit these reputable online writing resources:</p>
+            <ul class="list-disc list-inside space-y-2">
+                <li><a href="https://owl.purdue.edu/owl/general_writing/punctuation/quotation_marks/index.html" target="_blank" class="text-blue-600 hover:underline">Purdue OWL: Quotation Marks</a></li>
+                <li><a href="https://owl.purdue.edu/owl/general_writing/punctuation/parentheses.html" target="_blank" class="text-blue-600 hover:underline">Purdue OWL: Parentheses</a></li>
+                 <li><a href="https://www.grammarly.com/blog/parentheses/" target="_blank" class="text-blue-600 hover:underline">Grammarly Blog: How to Use Parentheses</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        const interactivePracticeQuestions = [
+             {
+                question: "The project manager announced __The deadline has been moved to Monday.__",
+                options: [
+                    "Needs parentheses ( )",
+                    "Needs quotation marks (“ ”)",
+                    "Needs a semicolon (;)",
+                    "Correct as is"
+                ],
+                answer: 1,
+                explanation: "Quotation marks are required to show the exact words the project manager announced."
+            },
+            {
+                question: "The main processor __a custom X2 chip__ gets very hot during operation.",
+                options: [
+                    "Use quotation marks (“ ”)",
+                    "Use parentheses ( )",
+                    "Use semicolons (;)",
+                    "Correct as is"
+                ],
+                answer: 1,
+                explanation: "Parentheses are used to enclose 'a custom X2 chip' because it is supplementary, non-essential information."
+            }
+        ];
+
+        const practiceQuestions = [
+            {
+                question: "Which sentence is punctuated correctly?",
+                options: [
+                    "The device (see Figure 1) must be handled with care.",
+                    "The device, see Figure 1, must be handled with care.",
+                    "The device “see Figure 1” must be handled with care."
+                ],
+                answer: 0,
+                explanation: "Parentheses are correctly used to enclose a citation or a reference that is non-essential to the grammatical structure of the sentence."
+            },
+            {
+                question: "Which sentence correctly quotes the speaker?",
+                options: [
+                    "The inspector said that, “the wiring is unsafe”.",
+                    "The inspector said, “The wiring is unsafe.”",
+                    "The inspector said “the wiring is unsafe.”"
+                ],
+                answer: 1,
+                explanation: "A comma is used to introduce the quote, the first word of the quote is capitalized, and the period is placed inside the closing quotation mark."
+            },
+            {
+                question: "Which sentence correctly uses parentheses?",
+                options: [
+                    "All staff (who have security clearance) may enter.",
+                    "All staff who have security clearance (may enter).",
+                    "All staff (who have security clearance may enter)."
+                ],
+                answer: 0,
+                explanation: "The parentheses enclose an aside that adds extra information but is not a complete sentence on its own. The punctuation belongs to the main sentence."
+            }
+        ];
+
+        const assessmentQuestions = [
+            {
+                question: "Which sentence is most professional and correct?",
+                options: [
+                    "Our CEO (a former engineer) is very hands-on.",
+                    "Our CEO, a former engineer, is very hands-on.",
+                    "Both of the above are correct."
+                ],
+                answer: 2,
+                explanation: "Both parentheses and commas can be used to set off non-essential information. Parentheses tend to de-emphasize the information more than commas do, but both are grammatically correct."
+            },
+            {
+                question: "Identify the correctly punctuated sentence.",
+                options: [
+                    "“The results are conclusive”, said the researcher.",
+                    "“The results are conclusive,” said the researcher.",
+                    "“The results are conclusive.” said the researcher."
+                ],
+                answer: 1,
+                explanation: "When a quote is attributed after it is spoken, a comma is placed inside the closing quotation mark before the attribution."
+            },
+            {
+                question: "Which sentence is correct?",
+                options: [
+                    "The report's conclusion “that the project was a success” was well received.",
+                    "The report's conclusion (that the project was a success) was well received.",
+                    "The report's conclusion, “that the project was a success,” was well received."
+                ],
+                answer: 1,
+                explanation: "The phrase 'that the project was a success' is an explanation of the conclusion, not a direct quote. Using parentheses makes it a non-essential clarification."
+            }
+        ];
+
+        const assignmentQuestions = [
+            {
+                question: "The technician reported, “I have found the source of the leak”.",
+                options: [
+                    "Correct as is.",
+                    "Change the period to be outside the quotation mark.",
+                    "Change the period to be a comma."
+                ],
+                answer: 0,
+                explanation: "This is a correctly punctuated direct quote. The period correctly goes inside the final quotation mark."
+            },
+            {
+                question: "Which is the correct way to write this sentence?",
+                options: [
+                    "The new software (which was expensive) is not user-friendly.",
+                    "The new software, which was expensive, is not user-friendly.",
+                    "Both are correct."
+                ],
+                answer: 2,
+                explanation: "Both commas and parentheses can be used to set off a non-restrictive clause. Parentheses make the clause seem less important than commas do."
+            },
+            {
+                question: "Select the correctly punctuated sentence.",
+                options: [
+                    "Have you read the article titled “The Future of AI”?",
+                    "Have you read the article titled (The Future of AI)?",
+                    "Have you read the article titled “The Future of AI?”"
+                ],
+                answer: 0,
+                explanation: "Quotation marks are used for the titles of shorter works like articles. The question mark belongs to the main sentence, so it goes outside the quotation marks."
+            },
+            {
+                question: "Which sentence is correct?",
+                options: [
+                    "Several key figures (see appendix A) were incorrect.",
+                    "Several key figures, see appendix A, were incorrect.",
+                    "Several key figures “see appendix A” were incorrect."
+                ],
+                answer: 0,
+                explanation: "Parentheses are the standard and clearest way to enclose a brief, in-text citation or reference."
+            }
+        ];
+        
+        let assignmentScore = 0;
+        let assignmentAnswered = 0;
+
+        function createMCQSection(containerId, questions, isAssignment = false) {
+            const container = document.getElementById(containerId);
+            container.innerHTML = '';
+            
+            questions.forEach((q, qIndex) => {
+                const qDiv = document.createElement('div');
+                let optionsHTML = '';
+                q.options.forEach((option, oIndex) => {
+                    optionsHTML += `
+                        <div class="flex items-center">
+                            <input type="radio" id="${containerId}-q${qIndex}o${oIndex}" name="${containerId}-q${qIndex}" value="${oIndex}" class="h-4 w-4 text-indigo-600 border-gray-300 focus:ring-indigo-500">
+                            <label for="${containerId}-q${qIndex}o${oIndex}" class="ml-3 block text-sm text-gray-900">${option}</label>
+                        </div>
+                    `;
+                });
+
+                qDiv.innerHTML = `
+                    <p class="font-medium text-gray-800">${qIndex + 1}. ${q.question}</p>
+                    <div id="${containerId}-feedback-q${qIndex}" class="space-y-2 mt-2">${optionsHTML}</div>
+                    <div id="${containerId}-explanation-q${qIndex}" class="explanation"></div>
+                `;
+                container.appendChild(qDiv);
+
+                const optionsContainer = document.getElementById(`${containerId}-feedback-q${qIndex}`);
+                optionsContainer.addEventListener('change', (event) => {
+                    if(event.target.type === 'radio') {
+                        handleMCQSelection(containerId, qIndex, questions, isAssignment);
+                    }
+                });
+            });
+        }
+        
+        function handleMCQSelection(containerId, qIndex, questions, isAssignment) {
+            const q = questions[qIndex];
+            const feedbackDiv = document.getElementById(`${containerId}-feedback-q${qIndex}`);
+            const selectedRadio = feedbackDiv.querySelector(`input[name="${containerId}-q${qIndex}"]:checked`);
+            
+            if (!selectedRadio) return;
+
+            const userAnswer = parseInt(selectedRadio.value);
+            const radios = feedbackDiv.querySelectorAll(`input[name="${containerId}-q${qIndex}"]`);
+            
+            radios.forEach(radio => {
+                radio.disabled = true;
+                const label = feedbackDiv.querySelector(`label[for="${radio.id}"]`);
+                label.classList.remove('correct-answer', 'incorrect-answer');
+
+                const radioValue = parseInt(radio.value);
+                if (radioValue === q.answer) {
+                    label.classList.add('correct-answer');
+                } else if (radioValue === userAnswer) {
+                    label.classList.add('incorrect-answer');
+                }
+            });
+
+            const explanationDiv = document.getElementById(`${containerId}-explanation-q${qIndex}`);
+            if (explanationDiv && q.explanation) {
+                explanationDiv.innerHTML = `<b>Explanation:</b> ${q.explanation}`;
+                explanationDiv.classList.add('show');
+            }
+
+            if(isAssignment) {
+                if(!selectedRadio.parentElement.hasAttribute('data-scored')) {
+                     if(userAnswer === q.answer) {
+                       assignmentScore++;
+                    }
+                    assignmentAnswered++;
+                    radios.forEach(r => r.parentElement.setAttribute('data-scored', 'true'));
+                }
+                const resultsDiv = document.getElementById('assignment-results');
+                resultsDiv.textContent = `Score: ${assignmentScore} out of ${questions.length}`;
+            }
+        }
+        
+        function resetSection(containerId, questions, isAssignment = false) {
+            if (isAssignment) {
+                assignmentScore = 0;
+                assignmentAnswered = 0;
+                const resultsDiv = document.getElementById('assignment-results');
+                resultsDiv.textContent = '';
+            }
+            createMCQSection(containerId, questions, isAssignment);
+        }
+
+        function formatQuestionsForWorksheet(title, questions) {
+            let text = `\n\n--- ${title} ---\n\n`;
+            text += `Instructions: Choose the option that is punctuated correctly and professionally.\n\n`;
+            questions.forEach((q, index) => {
+                text += `${index + 1}. ${q.question || "Choose the correctly punctuated sentence."}\n`;
+                q.options.forEach((opt, optIndex) => {
+                    text += `   ${String.fromCharCode(97 + optIndex)}) ${opt}\n`;
+                });
+                text += '\n';
+            });
+            return text;
+        }
+
+        function downloadWorksheet() {
+            let worksheetContent = `Worksheet: Parentheses vs. Quotation Marks\n`;
+            worksheetContent += `Developed by Dr. Mazen Badawy – Doctorate of English Teaching & Testing\n`;
+            worksheetContent += `=================================================================\n\n`;
+
+            worksheetContent += `** Part 1: Key Rules **\n\n`;
+            worksheetContent += `Parentheses ( ): Enclose extra, non-essential information.\n- Example: The sensor (model RX-500) is accurate.\n\n`;
+            worksheetContent += `Quotation Marks (“ ”): Enclose direct speech or exact words.\n- Example: She said, “The test is complete.”\n\n`;
+            
+            worksheetContent += formatQuestionsForWorksheet("Part 2: Interactive Practice Questions", interactivePracticeQuestions);
+            worksheetContent += formatQuestionsForWorksheet("Part 3: Practice Questions", practiceQuestions);
+            worksheetContent += formatQuestionsForWorksheet("Part 4: Assessment Questions", assessmentQuestions);
+            worksheetContent += formatQuestionsForWorksheet("Part 5: Assignment Questions", assignmentQuestions);
+
+            const blob = new Blob([worksheetContent], { type: 'text/plain;charset=utf-8' });
+            const link = document.createElement('a');
+            link.href = URL.createObjectURL(blob);
+            link.download = 'parentheses_and_quotations_worksheet.txt';
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        }
+
+
+        document.addEventListener('DOMContentLoaded', () => {
+            // Warm-up button
+            const revealBtn = document.getElementById('reveal-warmup-btn');
+            const warmupExplanation = document.getElementById('warmup-explanation');
+            revealBtn.addEventListener('click', () => {
+                warmupExplanation.classList.toggle('show');
+                revealBtn.textContent = warmupExplanation.classList.contains('show') ? 'Hide Explanation' : 'Reveal Explanation';
+            });
+
+            createMCQSection('interactive-practice-section', interactivePracticeQuestions);
+            createMCQSection('practice-section', practiceQuestions);
+            createMCQSection('assessment-section', assessmentQuestions);
+            createMCQSection('assignment-section', assignmentQuestions, true);
+        });
+
+    </script>
+
+</body>
+</html>
+

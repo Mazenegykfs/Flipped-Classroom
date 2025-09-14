@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Punctuation Revision: A Summary Session</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(to bottom, #ffffff, #e0f7fa); /* White to Light Blue Gradient */
+        }
+        .header {
+            background-color: #00796b;
+            color: white;
+            padding: 1rem;
+            text-align: center;
+            font-size: 1.25rem;
+            font-weight: 600;
+        }
+        .card {
+            background-color: white;
+            border-radius: 0.75rem;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+        }
+        .btn {
+            padding: 0.5rem 1rem;
+            border-radius: 0.5rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.2s;
+            border: none;
+        }
+        .btn:hover {
+            transform: translateY(-2px);
+        }
+        .btn-green {
+            background-color: #4CAF50; /* Green */
+            color: white;
+        }
+        .btn-green:hover {
+            background-color: #45a049;
+        }
+        .btn-red {
+            background-color: #f44336; /* Red */
+            color: white;
+        }
+        .btn-red:hover {
+            background-color: #e53935;
+        }
+        h1, h2, h3 {
+            color: #004d40;
+        }
+        .correct-answer {
+            color: #2e7d32;
+            font-weight: 600;
+            background-color: #e8f5e9;
+            padding: 2px 6px;
+            border-radius: 4px;
+        }
+        .incorrect-answer {
+            color: #c62828;
+            font-weight: 600;
+            background-color: #ffebee;
+            padding: 2px 6px;
+            border-radius: 4px;
+        }
+        .explanation {
+            margin-top: 0.75rem;
+            padding: 0.75rem;
+            background-color: #eef2ff; /* Light indigo background */
+            border-left: 4px solid #4f46e5; /* Indigo border */
+            color: #3730a3;
+            border-radius: 0.25rem;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease-out, padding 0.5s ease-out;
+        }
+        .explanation.show {
+            max-height: 150px; /* Adjust as needed */
+            padding: 0.75rem;
+        }
+    </style>
+</head>
+<body>
+
+    <header class="header">
+        Developed by Dr. Mazen Badawy – Doctorate of English Teaching & Testing
+    </header>
+
+    <div class="container mx-auto p-4 md:p-8">
+        <h1 class="text-3xl md:text-4xl font-bold text-center mb-8">Punctuation Revision: A Summary Session</h1>
+
+        <!-- Objectives -->
+        <div class="card">
+            <h2 class="text-2xl font-bold mb-4">1. Objectives</h2>
+            <ul class="list-disc list-inside space-y-2 mt-2">
+                <li>Review the functions of key punctuation: periods, commas, semicolons, colons, question marks, parentheses, and quotation marks.</li>
+                <li>Differentiate between commonly confused punctuation, such as commas and semicolons.</li>
+                <li>Identify and correct various punctuation errors in complex sentences.</li>
+                <li>Apply punctuation rules accurately to improve clarity and professionalism in technical writing.</li>
+            </ul>
+        </div>
+
+        <!-- Review & Warm-up -->
+        <div class="grid md:grid-cols-2 gap-6">
+            <div class="card">
+                <h2 class="text-2xl font-bold mb-4">2. Review</h2>
+                <p class="mb-2">Correct punctuation acts like a road map for your reader, guiding them through your ideas. It signals pauses, connects thoughts, and prevents misunderstandings. This session will reinforce the rules for the most common punctuation marks to ensure your writing is clear and professional.</p>
+            </div>
+            <div class="card">
+                <h2 class="text-2xl font-bold mb-4">3. Warm-up</h2>
+                <p class="mb-2">How many errors can you find in this sentence?</p>
+                <p class="italic">The manager asked what is the problem, the team replied we need more resources.</p>
+                <button id="reveal-warmup-btn" class="btn btn-green mt-2">Reveal Explanation</button>
+                <div id="warmup-explanation" class="explanation">
+                    <b>Correct Version:</b> The manager asked what the problem was; the team replied, “We need more resources.”<br>
+                    Errors include an incorrect direct question, a comma splice, and missing quotation marks.
+                </div>
+            </div>
+        </div>
+        
+        <!-- Presentation -->
+        <div class="card">
+            <h2 class="text-2xl font-bold mb-4">4. Presentation: Quick Reference Guide</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                 <div class="p-4 bg-gray-50 rounded-lg">
+                    <h3 class="text-xl font-semibold">Period (.)</h3>
+                    <p class="mt-1">Ends a statement, command, or indirect question.</p>
+                </div>
+                <div class="p-4 bg-gray-50 rounded-lg">
+                    <h3 class="text-xl font-semibold">Question Mark (?)</h3>
+                    <p class="mt-1">Ends a direct question.</p>
+                </div>
+                 <div class="p-4 bg-gray-50 rounded-lg">
+                    <h3 class="text-xl font-semibold">Comma (,)</h3>
+                    <p class="mt-1">Separates items in a list or joins two sentences with a conjunction (e.g., and, but).</p>
+                </div>
+                <div class="p-4 bg-gray-50 rounded-lg">
+                    <h3 class="text-xl font-semibold">Semicolon (;)</h3>
+                    <p class="mt-1">Connects two closely related complete sentences without a conjunction.</p>
+                </div>
+                <div class="p-4 bg-gray-50 rounded-lg">
+                    <h3 class="text-xl font-semibold">Colon (:)</h3>
+                    <p class="mt-1">Introduces a list, a quote, or an explanation.</p>
+                </div>
+                <div class="p-4 bg-gray-50 rounded-lg">
+                    <h3 class="text-xl font-semibold">Parentheses ( )</h3>
+                    <p class="mt-1">Enclose non-essential, supplementary information.</p>
+                </div>
+                 <div class="p-4 bg-gray-50 rounded-lg">
+                    <h3 class="text-xl font-semibold">Quotation Marks (“ ”)</h3>
+                    <p class="mt-1">Enclose direct speech or titles of short articles.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Interactive Practice -->
+        <div class="card">
+            <h2 class="text-2xl font-bold mb-4">5. Interactive Practice: Spot the Error</h2>
+            <p class="mb-4">For each sentence, identify the correct punctuation that is needed.</p>
+            <div id="interactive-practice-section" class="space-y-6">
+                <!-- Questions will be injected here by JS -->
+            </div>
+             <div class="mt-4 text-right">
+                <button onclick="resetSection('interactive-practice-section', interactivePracticeQuestions)" class="btn btn-red">Reset</button>
+            </div>
+        </div>
+
+        <!-- Practice -->
+        <div class="card">
+            <h2 class="text-2xl font-bold mb-4">6. Practice</h2>
+            <p class="mb-4">Choose the option that is punctuated correctly.</p>
+            <div id="practice-section" class="space-y-6">
+                <!-- Practice questions will be injected here by JS -->
+            </div>
+             <div class="mt-4 text-right">
+                <button onclick="resetSection('practice-section', practiceQuestions)" class="btn btn-red">Reset</button>
+            </div>
+        </div>
+
+        <!-- Assessment -->
+        <div class="card">
+            <h2 class="text-2xl font-bold mb-4">7. Assessment</h2>
+            <p class="mb-4">Choose the option that is punctuated correctly and most professionally.</p>
+            <div id="assessment-section" class="space-y-6">
+                 <!-- Assessment questions will be injected here by JS -->
+            </div>
+             <div class="mt-4 text-right">
+                <button onclick="resetSection('assessment-section', assessmentQuestions)" class="btn btn-red">Reset</button>
+            </div>
+        </div>
+        
+        <!-- Assignment -->
+        <div class="card">
+            <h2 class="text-2xl font-bold mb-4">8. Assignment: Final Quiz</h2>
+            <p class="mb-4">Choose the option that is punctuated correctly.</p>
+            <div id="assignment-section" class="space-y-6">
+                <!-- Assignment questions will be injected here by JS -->
+            </div>
+            <div id="assignment-results" class="mt-6 text-xl font-bold text-center"></div>
+             <div class="mt-4 text-right">
+                <button onclick="resetSection('assignment-section', assignmentQuestions, true)" class="btn btn-red">Reset</button>
+            </div>
+        </div>
+
+        <!-- Export Worksheet Section -->
+        <div class="card text-center">
+            <h2 class="text-2xl font-bold mb-4">Download Worksheet</h2>
+            <p class="mb-4">Click the button below to download a text file of this lesson's exercises for offline practice.</p>
+            <button onclick="downloadWorksheet()" class="btn btn-green text-lg">Export Worksheet (.txt)</button>
+        </div>
+
+        <!-- Further Reading Section -->
+        <div class="card">
+            <h2 class="text-2xl font-bold mb-4">Further Reading & References</h2>
+            <p class="mb-4">For more detailed explanations and examples, please visit these reputable online writing resources:</p>
+            <ul class="list-disc list-inside space-y-2">
+                <li><a href="https://owl.purdue.edu/owl/general_writing/punctuation/index.html" target="_blank" class="text-blue-600 hover:underline">Purdue OWL: Punctuation Overview</a></li>
+                <li><a href="https://www.grammarly.com/blog/punctuation/" target="_blank" class="text-blue-600 hover:underline">Grammarly Blog: Punctuation Guide</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        const interactivePracticeQuestions = [
+             {
+                question: "The system failed__ a critical component was offline.",
+                options: [
+                    "Needs a comma (,)",
+                    "Needs a semicolon (;)",
+                    "Needs a colon (:)",
+                    "Correct as is"
+                ],
+                answer: 1,
+                explanation: "This sentence contains two related independent clauses. A semicolon is required to connect them correctly. A comma would create a comma splice."
+            },
+            {
+                question: "The chief engineer __a brilliant strategist__ proposed a new solution.",
+                options: [
+                    "Needs quotation marks (“ ”)",
+                    "Needs commas ( ,... ,)",
+                    "Needs a semicolon (;)",
+                    "Correct as is"
+                ],
+                answer: 1,
+                explanation: "The phrase 'a brilliant strategist' is a non-essential clause (an appositive) that describes the engineer. It must be set off from the rest of the sentence by commas."
+            }
+        ];
+
+        const practiceQuestions = [
+            {
+                question: "Which sentence is punctuated correctly?",
+                options: [
+                    "The components arrived from three cities; Paris, France; Rome, Italy; and London, England.",
+                    "The components arrived from three cities, Paris, France, Rome, Italy, and London, England.",
+                    "The components arrived from three cities: Paris, France, Rome, Italy, and London, England."
+                ],
+                answer: 0,
+                explanation: "When items in a list contain their own commas, you must use semicolons to separate the main items in the list for clarity."
+            },
+            {
+                question: "Which sentence is punctuated correctly?",
+                options: [
+                    "The test was successful, however, the project is still delayed.",
+                    "The test was successful; however, the project is still delayed.",
+                    "The test was successful however the project is still delayed."
+                ],
+                answer: 1,
+                explanation: "A semicolon should be used before a conjunctive adverb like 'however' that connects two independent clauses. A comma then follows the adverb."
+            },
+            {
+                question: "Which sentence correctly uses punctuation?",
+                options: [
+                    "She asked, “When is the deadline?”.",
+                    "She asked, “When is the deadline?”",
+                    "She asked “When is the deadline?”.",
+                ],
+                answer: 1,
+                explanation: "The question mark is part of the quoted material, so it goes inside the closing quotation mark. No period is needed after the quotation."
+            }
+        ];
+
+        const assessmentQuestions = [
+            {
+                question: "Which sentence is most professional and correct?",
+                options: [
+                    "I need to know who is responsible?",
+                    "Who is responsible.",
+                    "I need to know who is responsible."
+                ],
+                answer: 2,
+                explanation: "This is an indirect question, which reports what is being asked but is part of a larger statement. Therefore, it ends with a period, not a question mark."
+            },
+            {
+                question: "Identify the correctly punctuated sentence.",
+                options: [
+                    "The machine has one purpose: to increase production.",
+                    "The machine has one purpose; to increase production.",
+                    "The machine has one purpose, to increase production."
+                ],
+                answer: 0,
+                explanation: "A colon is used correctly here to introduce an explanation or elaboration of the preceding clause."
+            },
+            {
+                question: "Which sentence is correct?",
+                options: [
+                    "The new software (which was developed in-house) is very efficient.",
+                    "The new software, which was developed in-house, is very efficient.",
+                    "Both of the above are correct."
+                ],
+                answer: 2,
+                explanation: "Both commas and parentheses can be used to set off a non-essential (non-restrictive) clause. Parentheses tend to de-emphasize the information more, but both are grammatically correct."
+            }
+        ];
+
+        const assignmentQuestions = [
+            {
+                question: "The simulation was a success, the data supports our hypothesis.",
+                options: [
+                    "Correct as is.",
+                    "Change the comma to a semicolon.",
+                    "Remove the comma."
+                ],
+                answer: 1,
+                explanation: "This is a comma splice. A semicolon is needed to properly connect two closely related independent clauses."
+            },
+            {
+                question: "Which is the correct way to write this sentence?",
+                options: [
+                    "We need three things for the test; a voltmeter, a power supply, and a resistor.",
+                    "We need three things for the test: a voltmeter, a power supply, and a resistor.",
+                    "We need three things for the test, a voltmeter, a power supply, and a resistor."
+                ],
+                answer: 1,
+                explanation: "A colon should be used to introduce a list after a complete sentence."
+            },
+            {
+                question: "Select the correctly punctuated sentence.",
+                options: [
+                    "The manager said, “The project is on schedule”.",
+                    "The manager said that “the project is on schedule.”",
+                    "The manager said, “The project is on schedule.”"
+                ],
+                answer: 2,
+                explanation: "A comma introduces the quote, and in American English, the period always goes inside the closing quotation mark."
+            },
+            {
+                question: "Which sentence is correct?",
+                options: [
+                    "Before the meeting begins let's review the agenda.",
+                    "Before the meeting begins, let's review the agenda.",
+                    "Before the meeting begins; let's review the agenda."
+                ],
+                answer: 1,
+                explanation: "A comma is required after an introductory phrase or clause."
+            }
+        ];
+        
+        let assignmentScore = 0;
+        let assignmentAnswered = 0;
+
+        function createMCQSection(containerId, questions, isAssignment = false) {
+            const container = document.getElementById(containerId);
+            container.innerHTML = '';
+            
+            questions.forEach((q, qIndex) => {
+                const qDiv = document.createElement('div');
+                let optionsHTML = '';
+                q.options.forEach((option, oIndex) => {
+                    optionsHTML += `
+                        <div class="flex items-center">
+                            <input type="radio" id="${containerId}-q${qIndex}o${oIndex}" name="${containerId}-q${qIndex}" value="${oIndex}" class="h-4 w-4 text-indigo-600 border-gray-300 focus:ring-indigo-500">
+                            <label for="${containerId}-q${qIndex}o${oIndex}" class="ml-3 block text-sm text-gray-900">${option}</label>
+                        </div>
+                    `;
+                });
+
+                qDiv.innerHTML = `
+                    <p class="font-medium text-gray-800">${qIndex + 1}. ${q.question}</p>
+                    <div id="${containerId}-feedback-q${qIndex}" class="space-y-2 mt-2">${optionsHTML}</div>
+                    <div id="${containerId}-explanation-q${qIndex}" class="explanation"></div>
+                `;
+                container.appendChild(qDiv);
+
+                const optionsContainer = document.getElementById(`${containerId}-feedback-q${qIndex}`);
+                optionsContainer.addEventListener('change', (event) => {
+                    if(event.target.type === 'radio') {
+                        handleMCQSelection(containerId, qIndex, questions, isAssignment);
+                    }
+                });
+            });
+        }
+        
+        function handleMCQSelection(containerId, qIndex, questions, isAssignment) {
+            const q = questions[qIndex];
+            const feedbackDiv = document.getElementById(`${containerId}-feedback-q${qIndex}`);
+            const selectedRadio = feedbackDiv.querySelector(`input[name="${containerId}-q${qIndex}"]:checked`);
+            
+            if (!selectedRadio) return;
+
+            const userAnswer = parseInt(selectedRadio.value);
+            const radios = feedbackDiv.querySelectorAll(`input[name="${containerId}-q${qIndex}"]`);
+            
+            radios.forEach(radio => {
+                radio.disabled = true;
+                const label = feedbackDiv.querySelector(`label[for="${radio.id}"]`);
+                label.classList.remove('correct-answer', 'incorrect-answer');
+
+                const radioValue = parseInt(radio.value);
+                if (radioValue === q.answer) {
+                    label.classList.add('correct-answer');
+                } else if (radioValue === userAnswer) {
+                    label.classList.add('incorrect-answer');
+                }
+            });
+
+            const explanationDiv = document.getElementById(`${containerId}-explanation-q${qIndex}`);
+            if (explanationDiv && q.explanation) {
+                explanationDiv.innerHTML = `<b>Explanation:</b> ${q.explanation}`;
+                explanationDiv.classList.add('show');
+            }
+
+            if(isAssignment) {
+                if(!selectedRadio.parentElement.hasAttribute('data-scored')) {
+                     if(userAnswer === q.answer) {
+                       assignmentScore++;
+                    }
+                    assignmentAnswered++;
+                    radios.forEach(r => r.parentElement.setAttribute('data-scored', 'true'));
+                }
+                const resultsDiv = document.getElementById('assignment-results');
+                resultsDiv.textContent = `Score: ${assignmentScore} out of ${questions.length}`;
+            }
+        }
+        
+        function resetSection(containerId, questions, isAssignment = false) {
+            if (isAssignment) {
+                assignmentScore = 0;
+                assignmentAnswered = 0;
+                const resultsDiv = document.getElementById('assignment-results');
+                resultsDiv.textContent = '';
+            }
+            createMCQSection(containerId, questions, isAssignment);
+        }
+
+        function formatQuestionsForWorksheet(title, questions) {
+            let text = `\n\n--- ${title} ---\n\n`;
+            text += `Instructions: Choose the option that is punctuated correctly and professionally.\n\n`;
+            questions.forEach((q, index) => {
+                text += `${index + 1}. ${q.question || "Choose the correctly punctuated sentence."}\n`;
+                q.options.forEach((opt, optIndex) => {
+                    text += `   ${String.fromCharCode(97 + optIndex)}) ${opt}\n`;
+                });
+                text += '\n';
+            });
+            return text;
+        }
+
+        function downloadWorksheet() {
+            let worksheetContent = `Worksheet: Punctuation Revision\n`;
+            worksheetContent += `Developed by Dr. Mazen Badawy – Doctorate of English Teaching & Testing\n`;
+            worksheetContent += `=================================================================\n\n`;
+
+            worksheetContent += `** Part 1: Quick Reference **\n\n`;
+            worksheetContent += `Semicolon (;): Joins two related complete sentences.\n`;
+            worksheetContent += `Colon (:): Introduces a list or explanation.\n`;
+            worksheetContent += `Comma (,): Separates items in a list or joins clauses with a conjunction.\n`;
+            worksheetContent += `Quotation Marks (“ ”): Enclose direct speech.\n\n`;
+            
+            worksheetContent += formatQuestionsForWorksheet("Part 2: Interactive Practice Questions", interactivePracticeQuestions);
+            worksheetContent += formatQuestionsForWorksheet("Part 3: Practice Questions", practiceQuestions);
+            worksheetContent += formatQuestionsForWorksheet("Part 4: Assessment Questions", assessmentQuestions);
+            worksheetContent += formatQuestionsForWorksheet("Part 5: Assignment Questions", assignmentQuestions);
+
+            const blob = new Blob([worksheetContent], { type: 'text/plain;charset=utf-8' });
+            const link = document.createElement('a');
+            link.href = URL.createObjectURL(blob);
+            link.download = 'punctuation_revision_worksheet.txt';
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        }
+
+
+        document.addEventListener('DOMContentLoaded', () => {
+            // Warm-up button
+            const revealBtn = document.getElementById('reveal-warmup-btn');
+            const warmupExplanation = document.getElementById('warmup-explanation');
+            revealBtn.addEventListener('click', () => {
+                warmupExplanation.classList.toggle('show');
+                revealBtn.textContent = warmupExplanation.classList.contains('show') ? 'Hide Explanation' : 'Reveal Explanation';
+            });
+
+            createMCQSection('interactive-practice-section', interactivePracticeQuestions);
+            createMCQSection('practice-section', practiceQuestions);
+            createMCQSection('assessment-section', assessmentQuestions);
+            createMCQSection('assignment-section', assignmentQuestions, true);
+        });
+
+    </script>
+
+</body>
+</html>
+

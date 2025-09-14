@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson: Using Capitalization in Technical Writing</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(to bottom, #ffffff, #e0f7fa); /* White to Light Blue Gradient */
+        }
+        .header {
+            background-color: #00796b;
+            color: white;
+            padding: 1rem;
+            text-align: center;
+            font-size: 1.25rem;
+            font-weight: 600;
+        }
+        .card {
+            background-color: white;
+            border-radius: 0.75rem;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+        }
+        .btn {
+            padding: 0.5rem 1rem;
+            border-radius: 0.5rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.2s;
+            border: none;
+        }
+        .btn:hover {
+            transform: translateY(-2px);
+        }
+        .btn-green {
+            background-color: #4CAF50; /* Green */
+            color: white;
+        }
+        .btn-green:hover {
+            background-color: #45a049;
+        }
+        .btn-red {
+            background-color: #f44336; /* Red */
+            color: white;
+        }
+        .btn-red:hover {
+            background-color: #e53935;
+        }
+        h1, h2, h3 {
+            color: #004d40;
+        }
+        .correct-answer {
+            color: #2e7d32;
+            font-weight: 600;
+            background-color: #e8f5e9;
+            padding: 2px 6px;
+            border-radius: 4px;
+        }
+        .incorrect-answer {
+            color: #c62828;
+            font-weight: 600;
+            background-color: #ffebee;
+            padding: 2px 6px;
+            border-radius: 4px;
+        }
+        .explanation {
+            margin-top: 0.75rem;
+            padding: 0.75rem;
+            background-color: #eef2ff; /* Light indigo background */
+            border-left: 4px solid #4f46e5; /* Indigo border */
+            color: #3730a3;
+            border-radius: 0.25rem;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease-out, padding 0.5s ease-out;
+        }
+        .explanation.show {
+            max-height: 100px; /* Adjust as needed */
+            padding: 0.75rem;
+        }
+        /* Click to Find Error Styles */
+        .error-sentence span {
+            cursor: pointer;
+            padding: 2px 1px;
+            border-radius: 3px;
+            transition: background-color 0.3s;
+        }
+        .error-sentence span:hover {
+            background-color: #e0f2f1;
+        }
+        .error-word.correct {
+            background-color: #a7ffeb;
+            border-bottom: 2px solid #00796b;
+        }
+        .error-word.incorrect {
+             background-color: #ffcdd2;
+             border-bottom: 2px solid #c62828;
+        }
+    </style>
+</head>
+<body>
+
+    <header class="header">
+        Developed by Dr. Mazen Badawy – Doctorate of English Teaching & Testing
+    </header>
+
+    <div class="container mx-auto p-4 md:p-8">
+        <h1 class="text-3xl md:text-4xl font-bold text-center mb-8">Using Capitalization in Technical Writing</h1>
+
+        <!-- Objectives -->
+        <div class="card">
+            <h2 class="text-2xl font-bold mb-4">1. Objectives</h2>
+            <ul class="list-disc list-inside space-y-2">
+                <li>Capitalize the first word of a sentence and the pronoun "I".</li>
+                <li>Correctly capitalize proper nouns, including names of people, companies, and specific products.</li>
+                <li>Identify and correctly write common acronyms in all capital letters.</li>
+                <li>Apply standard capitalization rules for titles and headings in reports.</li>
+            </ul>
+        </div>
+
+        <!-- Review & Warm-up -->
+        <div class="grid md:grid-cols-2 gap-6">
+            <div class="card">
+                <h2 class="text-2xl font-bold mb-4">2. Review</h2>
+                <p class="mb-2"><strong>Capitalization</strong> is the use of a capital (uppercase) letter at the beginning of a word. It signals the start of a new sentence or identifies a proper noun, making text easier to read and understand.</p>
+            </div>
+            <div class="card">
+                <h2 class="text-2xl font-bold mb-4">3. Warm-up</h2>
+                <p class="mb-2">How does capitalization change the professionalism of these sentences?</p>
+                <p class="italic">1. our engineer, mr. smith, uses python to analyze the data from nasa.</p>
+                <p class="italic">2. Our engineer, Mr. Smith, uses Python to analyze the data from NASA.</p>
+                <button id="reveal-warmup-btn" class="btn btn-green mt-2">Reveal Explanation</button>
+                <div id="warmup-explanation" class="explanation">
+                    Sentence 1 looks unprofessional and is harder to read because it lacks proper capitalization. Sentence 2 is clear and professional because it correctly capitalizes the start of the sentence, a title, a name, a product, and an acronym.
+                </div>
+            </div>
+        </div>
+        
+        <!-- Presentation -->
+        <div class="card">
+            <h2 class="text-2xl font-bold mb-4">4. Presentation: Two Key Capitalization Rules</h2>
+            <div class="space-y-6">
+                <!-- Rule 1 -->
+                 <div>
+                    <h3 class="text-xl font-semibold">Rule 1: Capitalize the Start of Sentences and Titles</h3>
+                    <p class="mt-1">Always capitalize the first word of a sentence. For titles and headings, capitalize the first word and all major words (nouns, pronouns, verbs, adjectives, adverbs).</p>
+                    <p class="mt-2 p-3 bg-gray-100 rounded-md"><b>Sentence:</b> <span class="font-bold text-blue-700">T</span>he system is now operational.</p>
+                    <p class="mt-2 p-3 bg-gray-100 rounded-md"><b>Title:</b> <span class="font-bold text-blue-700">A</span>nalysis of <span class="font-bold text-blue-700">S</span>tress <span class="font-bold text-blue-700">T</span>est <span class="font-bold text-blue-700">R</span>esults</p>
+                </div>
+                <!-- Rule 2 -->
+                <div>
+                    <h3 class="text-xl font-semibold">Rule 2: Capitalize Proper Nouns and Acronyms</h3>
+                    <p class="mt-1">Proper nouns—the specific names of people, places, organizations, and brands—must be capitalized. Acronyms (abbreviations formed from initial letters) are also typically capitalized.</p>
+                    <p class="mt-2 p-3 bg-gray-100 rounded-md"><b>People & Companies:</b> <span class="font-bold text-blue-700">D</span>r. <span class="font-bold text-blue-700">E</span>vans from <span class="font-bold text-blue-700">S</span>iemens will attend.</p>
+                    <p class="mt-2 p-3 bg-gray-100 rounded-md"><b>Brands & Acronyms:</b> We use <span class="font-bold text-blue-700">A</span>uto<span class="font-bold text-blue-700">C</span>AD on our computers, which have an Intel <span class="font-bold text-blue-700">C</span><span class="font-bold text-blue-700">P</span><span class="font-bold text-blue-700">U</span>.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Interactive Practice: Click to Find the Error -->
+        <div class="card">
+            <h2 class="text-2xl font-bold mb-4">5. Interactive Practice: Click to Find the Error</h2>
+            <p class="mb-4">Click on the word that has a capitalization error in each sentence. A green highlight means you are correct!</p>
+            <div id="error-finding-section" class="space-y-4 text-lg">
+                <p class="error-sentence" id="error-1"><span>The</span> <span>report</span> <span>for</span> <span>microsoft</span> <span>is</span> <span>due</span> <span>next</span> <span>week.</span></p>
+                <p class="error-sentence" id="error-2"><span>Our</span> <span>team</span> <span>uses</span> <span>the</span> <span>Java</span> <span>programming</span> <span>Language.</span></p>
+                <p class="error-sentence" id="error-3"><span>we</span> <span>received</span> <span>the</span> <span>data</span> <span>from</span> <span>the</span> <span>Hubble</span> <span>Space</span> <span>Telescope.</span></p>
+                <p class="error-sentence" id="error-4"><span>The</span> <span>CPU</span> <span>overheated,</span> <span>so</span> <span>i</span> <span>had</span> <span>to</span> <span>reboot</span> <span>the</span> <span>system.</span></p>
+            </div>
+        </div>
+
+
+        <!-- Practice -->
+        <div class="card">
+            <h2 class="text-2xl font-bold mb-4">6. Practice</h2>
+            <p class="mb-4">Choose the option that is capitalized correctly.</p>
+            <div id="practice-section" class="space-y-6">
+                <!-- Practice questions will be injected here by JS -->
+            </div>
+             <div class="mt-4 text-right">
+                <button onclick="resetSection('practice-section', practiceQuestions)" class="btn btn-red">Reset</button>
+            </div>
+        </div>
+
+        <!-- Assessment -->
+        <div class="card">
+            <h2 class="text-2xl font-bold mb-4">7. Assessment</h2>
+            <p class="mb-4">Choose the option that is capitalized correctly and most professionally.</p>
+            <div id="assessment-section" class="space-y-6">
+                 <!-- Assessment questions will be injected here by JS -->
+            </div>
+             <div class="mt-4 text-right">
+                <button onclick="resetSection('assessment-section', assessmentQuestions)" class="btn btn-red">Reset</button>
+            </div>
+        </div>
+        
+        <!-- Assignment -->
+        <div class="card">
+            <h2 class="text-2xl font-bold mb-4">8. Assignment: Final Quiz</h2>
+            <p class="mb-4">Choose the option that is capitalized correctly.</p>
+            <div id="assignment-section" class="space-y-6">
+                <!-- Assignment questions will be injected here by JS -->
+            </div>
+            <div id="assignment-results" class="mt-6 text-xl font-bold text-center"></div>
+             <div class="mt-4 text-right">
+                <button onclick="resetSection('assignment-section', assignmentQuestions, true)" class="btn btn-red">Reset</button>
+            </div>
+        </div>
+
+        <!-- Export Worksheet Section -->
+        <div class="card text-center">
+            <h2 class="text-2xl font-bold mb-4">Download Worksheet</h2>
+            <p class="mb-4">Click the button below to download a text file of this lesson's exercises for offline practice.</p>
+            <button onclick="downloadWorksheet()" class="btn btn-green text-lg">Export Worksheet (.txt)</button>
+        </div>
+
+        <!-- Further Reading Section -->
+        <div class="card">
+            <h2 class="text-2xl font-bold mb-4">Further Reading & References</h2>
+            <p class="mb-4">For more detailed explanations and examples, please visit these reputable online writing resources:</p>
+            <ul class="list-disc list-inside space-y-2">
+                <li><a href="https://owl.purdue.edu/owl/general_writing/mechanics/capitalization.html" target="_blank" class="text-blue-600 hover:underline">Purdue OWL: Capitalization</a></li>
+                <li><a href="https://www.grammarly.com/blog/capitalization-rules/" target="_blank" class="text-blue-600 hover:underline">Grammarly Blog: Capitalization Rules</a></li>
+                <li><a href="https://www.scribbr.com/language-rules/capitalization-rules/" target="_blank" class="text-blue-600 hover:underline">Scribbr: Capitalization Rules with Examples</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        const practiceQuestions = [
+            {
+                question: "Which sentence is capitalized correctly?",
+                options: [
+                    "We use Dell computers for our work.",
+                    "we use Dell computers for our work.",
+                    "We use dell computers for our work."
+                ],
+                answer: 0,
+                explanation: "The sentence must start with a capital letter ('We'), and 'Dell' is a proper noun (a brand name) that must also be capitalized."
+            },
+            {
+                question: "Which title is capitalized correctly for a report?",
+                options: [
+                    "Results of the Annual performance Review",
+                    "Results of the Annual Performance review",
+                    "Results of the Annual Performance Review"
+                ],
+                answer: 2,
+                explanation: "In titles, major words (Results, Annual, Performance, Review) are capitalized. Minor words like 'of' and 'the' are not, unless they are the first word."
+            },
+            {
+                question: "Which sentence uses capitalization correctly?",
+                options: [
+                    "The data from the GPS was accurate.",
+                    "The data from the Gps was accurate.",
+                    "The data from the gps was accurate."
+                ],
+                answer: 0,
+                explanation: "GPS (Global Positioning System) is an acronym and should be written in all capital letters."
+            }
+        ];
+
+        const assessmentQuestions = [
+            {
+                question: "Which sentence is most professional?",
+                options: [
+                    "i will send the report to dr. chen.",
+                    "I will send the report to Dr. Chen.",
+                    "I will send the report to dr. Chen."
+                ],
+                answer: 1,
+                explanation: "The pronoun 'I' is always capitalized. 'Dr.' is a title and 'Chen' is a name; both are proper nouns and must be capitalized."
+            },
+            {
+                question: "Identify the correctly capitalized sentence.",
+                options: [
+                    "The new software was developed by a team in Asia.",
+                    "The new Software was developed by a Team in Asia.",
+                    "The new software was developed by a team in asia."
+                ],
+                answer: 0,
+                explanation: "'Software' and 'team' are common nouns and should not be capitalized mid-sentence. 'Asia' is a proper noun (a continent) and must be capitalized."
+            },
+            {
+                question: "Which sentence is correct?",
+                options: [
+                    "Our main Server is located in Berlin, germany.",
+                    "Our main server is located in Berlin, Germany.",
+                    "Our main server is located in berlin, Germany."
+                ],
+                answer: 1,
+                explanation: "'Server' is a common noun. 'Berlin' and 'Germany' are proper nouns (a city and a country) and must be capitalized."
+            }
+        ];
+
+        const assignmentQuestions = [
+            {
+                question: "Which of the following is correct?",
+                options: [
+                    "The United States has a large technology sector.",
+                    "The United states has a large technology sector.",
+                    "The united states has a large technology sector."
+                ],
+                answer: 0,
+                explanation: "'United States' is the name of a country (a proper noun) and both words should be capitalized."
+            },
+            {
+                question: "Which is the correct way to write this sentence?",
+                options: [
+                    "The report, titled 'analysis of quarterly earnings,' is attached.",
+                    "The report, titled 'Analysis of Quarterly Earnings,' is attached.",
+                    "The report, titled 'Analysis of quarterly earnings,' is attached."
+                ],
+                answer: 1,
+                explanation: "When a title is in a sentence, its major words should be capitalized according to title case rules."
+            },
+            {
+                question: "Select the correctly capitalized sentence.",
+                options: [
+                    "The engineer from general electric will present his findings.",
+                    "The engineer from General Electric will present his findings.",
+                    "The Engineer from General Electric will present his findings."
+                ],
+                answer: 1,
+                explanation: "'General Electric' is a company name and must be capitalized. 'Engineer' is a common noun and should not be capitalized here."
+            },
+            {
+                question: "Which sentence is correct?",
+                options: [
+                    "Our lab follows all OSHA safety guidelines.",
+                    "Our Lab follows all osha safety guidelines.",
+                    "Our lab follows all osha safety guidelines."
+                ],
+                answer: 0,
+                explanation: "'Lab' is a common noun. OSHA is an acronym (Occupational Safety and Health Administration) and must be capitalized."
+            }
+        ];
+        
+        const errorWords = {
+            "error-1": "microsoft",
+            "error-2": "Language",
+            "error-3": "we",
+            "error-4": "i"
+        };
+        
+        let assignmentScore = 0;
+        let assignmentAnswered = 0;
+
+        function createMCQSection(containerId, questions, isAssignment = false) {
+            const container = document.getElementById(containerId);
+            container.innerHTML = '';
+            
+            questions.forEach((q, qIndex) => {
+                const qDiv = document.createElement('div');
+                let optionsHTML = '';
+                q.options.forEach((option, oIndex) => {
+                    optionsHTML += `
+                        <div class="flex items-center">
+                            <input type="radio" id="${containerId}-q${qIndex}o${oIndex}" name="${containerId}-q${qIndex}" value="${oIndex}" class="h-4 w-4 text-indigo-600 border-gray-300 focus:ring-indigo-500">
+                            <label for="${containerId}-q${qIndex}o${oIndex}" class="ml-3 block text-sm text-gray-900">${option}</label>
+                        </div>
+                    `;
+                });
+
+                qDiv.innerHTML = `
+                    <p class="font-medium text-gray-800">${qIndex + 1}. ${q.question}</p>
+                    <div id="${containerId}-feedback-q${qIndex}" class="space-y-2 mt-2">${optionsHTML}</div>
+                    <div id="${containerId}-explanation-q${qIndex}" class="explanation"></div>
+                `;
+                container.appendChild(qDiv);
+
+                const optionsContainer = document.getElementById(`${containerId}-feedback-q${qIndex}`);
+                optionsContainer.addEventListener('change', (event) => {
+                    if(event.target.type === 'radio') {
+                        handleMCQSelection(containerId, qIndex, questions, isAssignment);
+                    }
+                });
+            });
+        }
+        
+        function handleMCQSelection(containerId, qIndex, questions, isAssignment) {
+            const q = questions[qIndex];
+            const feedbackDiv = document.getElementById(`${containerId}-feedback-q${qIndex}`);
+            const selectedRadio = feedbackDiv.querySelector(`input[name="${containerId}-q${qIndex}"]:checked`);
+            
+            if (!selectedRadio) return;
+
+            const userAnswer = parseInt(selectedRadio.value);
+            const radios = feedbackDiv.querySelectorAll(`input[name="${containerId}-q${qIndex}"]`);
+            
+            radios.forEach(radio => {
+                radio.disabled = true;
+                const label = feedbackDiv.querySelector(`label[for="${radio.id}"]`);
+                label.classList.remove('correct-answer', 'incorrect-answer');
+
+                const radioValue = parseInt(radio.value);
+                if (radioValue === q.answer) {
+                    label.classList.add('correct-answer');
+                } else if (radioValue === userAnswer) {
+                    label.classList.add('incorrect-answer');
+                }
+            });
+
+            const explanationDiv = document.getElementById(`${containerId}-explanation-q${qIndex}`);
+            if (explanationDiv && q.explanation) {
+                explanationDiv.innerHTML = `<b>Explanation:</b> ${q.explanation}`;
+                explanationDiv.classList.add('show');
+            }
+
+            if(isAssignment) {
+                if(!selectedRadio.parentElement.hasAttribute('data-scored')) {
+                     if(userAnswer === q.answer) {
+                       assignmentScore++;
+                    }
+                    assignmentAnswered++;
+                    radios.forEach(r => r.parentElement.setAttribute('data-scored', 'true'));
+                }
+                const resultsDiv = document.getElementById('assignment-results');
+                resultsDiv.textContent = `Score: ${assignmentScore} out of ${questions.length}`;
+            }
+        }
+        
+        function resetSection(containerId, questions, isAssignment = false) {
+            if (isAssignment) {
+                assignmentScore = 0;
+                assignmentAnswered = 0;
+                const resultsDiv = document.getElementById('assignment-results');
+                resultsDiv.textContent = '';
+            }
+            createMCQSection(containerId, questions, isAssignment);
+        }
+
+        function formatQuestionsForWorksheet(title, questions) {
+            let text = `\n\n--- ${title} ---\n\n`;
+            text += `Instructions: Choose the sentence that is capitalized correctly and professionally.\n\n`;
+            questions.forEach((q, index) => {
+                text += `${index + 1}. ${q.question || "Choose the correctly capitalized sentence."}\n`;
+                q.options.forEach((opt, optIndex) => {
+                    text += `   ${String.fromCharCode(97 + optIndex)}) ${opt}\n`;
+                });
+                text += '\n';
+            });
+            return text;
+        }
+
+        function downloadWorksheet() {
+            let worksheetContent = `Worksheet: Using Capitalization in Technical Writing\n`;
+            worksheetContent += `Developed by Dr. Mazen Badawy – Doctorate of English Teaching & Testing\n`;
+            worksheetContent += `=================================================================\n\n`;
+
+            worksheetContent += `** Part 1: Key Rules **\n\n`;
+            worksheetContent += `Rule 1: Capitalize the Start of Sentences and Titles\n- Example: The system is now operational.\n\n`;
+            worksheetContent += `Rule 2: Capitalize Proper Nouns and Acronyms\n- Example: We use AutoCAD on our computers, which have an Intel CPU.\n`;
+
+            worksheetContent += formatQuestionsForWorksheet("Part 2: Practice Questions", practiceQuestions);
+            worksheetContent += formatQuestionsForWorksheet("Part 3: Assessment Questions", assessmentQuestions);
+            worksheetContent += formatQuestionsForWorksheet("Part 4: Assignment Questions", assignmentQuestions);
+
+            const blob = new Blob([worksheetContent], { type: 'text/plain;charset=utf-8' });
+            const link = document.createElement('a');
+            link.href = URL.createObjectURL(blob);
+            link.download = 'capitalization_worksheet.txt';
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        }
+
+
+        document.addEventListener('DOMContentLoaded', () => {
+            // Warm-up button
+            const revealBtn = document.getElementById('reveal-warmup-btn');
+            const warmupExplanation = document.getElementById('warmup-explanation');
+            revealBtn.addEventListener('click', () => {
+                warmupExplanation.classList.toggle('show');
+                revealBtn.textContent = warmupExplanation.classList.contains('show') ? 'Hide Explanation' : 'Reveal Explanation';
+            });
+
+            // Error Finding Logic
+            const errorSentences = document.querySelectorAll('.error-sentence');
+            errorSentences.forEach(sentence => {
+                const words = sentence.querySelectorAll('span');
+                words.forEach(word => {
+                    word.addEventListener('click', () => {
+                        const correctErrorWord = errorWords[sentence.id];
+                        // remove punctuation for comparison
+                        const clickedWord = word.textContent.replace(/[.,]/g, ''); 
+                        
+                        // Clear previous highlights in the same sentence
+                        words.forEach(w => w.classList.remove('correct', 'incorrect', 'error-word'));
+
+                        word.classList.add('error-word');
+                        if (clickedWord === correctErrorWord) {
+                            word.classList.add('correct');
+                        } else {
+                            word.classList.add('incorrect');
+                        }
+                    });
+                });
+            });
+
+            createMCQSection('practice-section', practiceQuestions);
+            createMCQSection('assessment-section', assessmentQuestions);
+            createMCQSection('assignment-section', assignmentQuestions, true);
+        });
+
+    </script>
+
+</body>
+</html>
+
