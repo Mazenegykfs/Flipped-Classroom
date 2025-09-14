@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lesson: Using Semicolons in Technical Writing</title>
+    <title>Lesson: Using Quotation Marks in Technical Writing</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
@@ -15,9 +15,11 @@
             background-color: #00796b;
             color: white;
             padding: 1rem;
-            text-align: center;
             font-size: 1.25rem;
             font-weight: 600;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
         .card {
             background-color: white;
@@ -50,6 +52,13 @@
         }
         .btn-red:hover {
             background-color: #e53935;
+        }
+        .btn-home {
+            background-color: #004d40;
+            color: white;
+        }
+        .btn-home:hover {
+            background-color: #00695c;
         }
         h1, h2, h3 {
             color: #004d40;
@@ -84,7 +93,7 @@
             padding: 0.75rem;
         }
         /* Drag and Drop Styles */
-        .semicolon-draggable {
+        .quotation-draggable {
             display: inline-block;
             font-size: 1.5rem;
             font-weight: bold;
@@ -120,20 +129,21 @@
 <body>
 
     <header class="header">
-        Developed by Dr. Mazen Badawy – Doctorate of English Teaching & Testing
+        <span>Using Technology-Enhanced Flipped Classroom Model to Develop EFL Engineering Students’ Punctuation Marks</span>
+        <a href="https://mazenegykfs.github.io/Flipped-Classroom/index.html" class="btn btn-home">Home</a>
     </header>
 
     <div class="container mx-auto p-4 md:p-8">
-        <h1 class="text-3xl md:text-4xl font-bold text-center mb-8">Using Semicolons in Technical Writing</h1>
+        <h1 class="text-3xl md:text-4xl font-bold text-center mb-8">Using Quotation Marks in Technical Writing</h1>
 
         <!-- Objectives -->
         <div class="card">
             <h2 class="text-2xl font-bold mb-4">1. Objectives</h2>
             <ul class="list-disc list-inside space-y-2">
-                <li>Correctly connect two closely related independent clauses with a semicolon.</li>
-                <li>Use semicolons to separate items in a complex list that already contains commas.</li>
-                <li>Differentiate between the correct use of a semicolon, a period, and a comma.</li>
-                <li>Avoid common semicolon errors, such as the comma splice.</li>
+                <li>Use quotation marks to enclose direct quotations correctly.</li>
+                <li>Place other punctuation (commas, periods, etc.) correctly in relation to quotation marks.</li>
+                <li>Use quotation marks for titles of articles, chapters, and other short works.</li>
+                <li>Recognize when quotation marks are used to indicate technical terms or words used in a special sense.</li>
             </ul>
         </div>
 
@@ -141,231 +151,143 @@
         <div class="grid md:grid-cols-2 gap-6">
             <div class="card">
                 <h2 class="text-2xl font-bold mb-4">2. Review</h2>
-                <p class="mb-2">An <strong>independent clause</strong> is a complete thought that can stand alone as a sentence. Both clauses joined by a semicolon must be independent.</p>
-                <p>Example: <em>The calculations were finished.</em></p>
+                <p class="mb-2"><strong>Quotation marks (" ")</strong> are used to set off the exact words of a speaker or writer. They are also used for the titles of short works and to highlight specific terms.</p>
             </div>
             <div class="card">
                 <h2 class="text-2xl font-bold mb-4">3. Warm-up</h2>
-                <p class="mb-2">How does the punctuation change the flow of these sentences?</p>
-                <p class="italic">1. The simulation failed. The server overheated.</p>
-                <p class="italic">2. The simulation failed; the server overheated.</p>
+                <p class="mb-2">What is the difference in meaning between these two sentences?</p>
+                <p class="italic">1. The manager said the system is offline.</p>
+                <p class="italic">2. The manager said, "The system is offline."</p>
                 <button id="reveal-warmup-btn" class="btn btn-green mt-2">Reveal Explanation</button>
                 <div id="warmup-explanation" class="explanation">
-                    Sentence 2 is more fluid. The semicolon shows a strong, direct connection between the two ideas (cause and effect), making the writing more sophisticated than two separate sentences.
+                    Sentence 1 is an indirect quote (paraphrasing), while Sentence 2 is a direct quote, indicating those were the manager's exact words.
                 </div>
             </div>
         </div>
         
         <!-- Presentation -->
         <div class="card">
-            <h2 class="text-2xl font-bold mb-4">4. Presentation: Two Key Semicolon Rules</h2>
+            <h2 class="text-2xl font-bold mb-4">4. Presentation: Key Quotation Mark Rules</h2>
             <div class="space-y-6">
-                <!-- Rule 1 -->
                  <div>
-                    <h3 class="text-xl font-semibold">Rule 1: To Connect Related Independent Clauses</h3>
-                    <p class="mt-1">Use a semicolon to join two complete sentences that are closely related in thought. It's stronger than a comma but weaker than a period.</p>
-                    <p class="mt-2 p-3 bg-gray-100 rounded-md"><b>Example:</b> The stress test was completed<span class="font-bold text-blue-700">; the results were conclusive.</span></p>
-                    <p class="mt-2 p-3 bg-red-100 rounded-md"><b>Incorrect:</b> The stress test was completed, the results were conclusive. (This is a comma splice error).</p>
+                    <h3 class="text-xl font-semibold">Rule 1: Direct Quotations</h3>
+                    <p class="mt-1">Use quotation marks to enclose the exact words of a person.</p>
+                    <p class="mt-2 p-3 bg-gray-100 rounded-md"><b>Example:</b> The lead engineer stated, <span class="font-bold text-blue-700">"</span>All systems are nominal.<span class="font-bold text-blue-700">"</span></p>
                 </div>
-                <!-- Rule 2 -->
                 <div>
-                    <h3 class="text-xl font-semibold">Rule 2: To Separate Items in a Complex List</h3>
-                    <p class="mt-1">Use a semicolon to separate items in a list when the items themselves contain commas. This prevents confusion.</p>
-                    <p class="mt-2 p-3 bg-gray-100 rounded-md"><b>Example:</b> The project team included members from Cairo, Egypt<span class="font-bold text-blue-700">;</span> Riyadh, Saudi Arabia<span class="font-bold text-blue-700">;</span> and Dubai, UAE.</p>
+                    <h3 class="text-xl font-semibold">Rule 2: Punctuation Placement</h3>
+                    <p class="mt-1">Commas and periods always go inside the closing quotation mark.</p>
+                    <p class="mt-2 p-3 bg-gray-100 rounded-md"><b>Example:</b> <span class="font-bold text-blue-700">"</span>The test is complete,<span class="font-bold text-blue-700">"</span> she announced.</p>
+                    <p class="mt-1">Colons and semicolons go outside the closing quotation mark.</p>
+                     <p class="mt-2 p-3 bg-gray-100 rounded-md"><b>Example:</b> He called the results <span class="font-bold text-blue-700">"</span>a major breakthrough<span class="font-bold text-blue-700">";</span> the team celebrated afterward.</p>
+                </div>
+                <div>
+                    <h3 class="text-xl font-semibold">Rule 3: Titles of Short Works</h3>
+                    <p class="mt-1">Use quotation marks for titles of articles, chapters, essays, and reports.</p>
+                    <p class="mt-2 p-3 bg-gray-100 rounded-md"><b>Example:</b> Please read the chapter titled <span class="font-bold text-blue-700">"</span>Safety Procedures.<span class="font-bold text-blue-700">"</span></p>
                 </div>
             </div>
         </div>
 
-        <!-- NEW Interactive Practice: Drag & Drop -->
+        <!-- Interactive Practice: Drag & Drop -->
         <div class="card">
             <h2 class="text-2xl font-bold mb-4">5. Interactive Practice: Drag & Drop</h2>
             <div class="flex items-center space-x-4 p-4 bg-gray-100 rounded-lg">
-                <p>Drag this semicolon:</p>
-                <div id="semicolon-bank">
-                    <span class="semicolon-draggable" draggable="true">;</span>
+                <p>Drag these marks:</p>
+                <div id="quotation-bank" class="flex space-x-2">
+                    <span class="quotation-draggable" draggable="true">"</span>
                 </div>
             </div>
             <div id="drag-drop-sentences" class="mt-4 space-y-4 text-lg">
-                <p>1. The first test was a success<span class="drop-zone" data-correct="true"></span> the second one revealed a critical flaw.</p>
-                <p>2. The code compiled without errors<span class="drop-zone" data-correct="true"></span> however, it failed the runtime test.</p>
-                <p>3. Our top candidates are Yasmin, who has ten years of experience<span class="drop-zone" data-correct="true"></span> Ali, a recent graduate with top marks<span class="drop-zone" data-correct="true"></span> and Fatima, a specialist in AI.</p>
-                <p>4. The motor is running hot<span class="drop-zone" data-correct="true"></span> we need to shut it down immediately.</p>
+                <p>1. <span class="drop-zone" data-correct="true"></span>The data is conclusive,<span class="drop-zone" data-correct="true"></span> said the analyst.</p>
+                <p>2. The manual refers to this as a <span class="drop-zone" data-correct="true"></span>failsafe<span class="drop-zone" data-correct="true"></span> mechanism.</p>
+                <p>3. The article is titled <span class="drop-zone" data-correct="true"></span>An Analysis of Material Stress.<span class="drop-zone" data-correct="true"></span></p>
             </div>
         </div>
 
-        <!-- Practice -->
-        <div class="card">
-            <h2 class="text-2xl font-bold mb-4">6. Practice</h2>
-            <p class="mb-4">Choose the sentence that is punctuated correctly.</p>
-            <div id="practice-section" class="space-y-6">
-                <!-- Practice questions will be injected here by JS -->
-            </div>
-             <div class="mt-4 text-right">
-                <button onclick="resetSection('practice-section', practiceQuestions)" class="btn btn-red">Reset</button>
-            </div>
-        </div>
+        <!-- Practice & Assessment Sections -->
+        <div id="mcq-container"></div>
 
-        <!-- Assessment -->
-        <div class="card">
-            <h2 class="text-2xl font-bold mb-4">7. Assessment</h2>
-            <p class="mb-4">Choose the sentence that is punctuated correctly.</p>
-            <div id="assessment-section" class="space-y-6">
-                 <!-- Assessment questions will be injected here by JS -->
-            </div>
-             <div class="mt-4 text-right">
-                <button onclick="resetSection('assessment-section', assessmentQuestions)" class="btn btn-red">Reset</button>
-            </div>
-        </div>
-        
-        <!-- Assignment -->
-        <div class="card">
-            <h2 class="text-2xl font-bold mb-4">8. Assignment: Final Quiz</h2>
-            <p class="mb-4">Choose the sentence that is punctuated correctly.</p>
-            <div id="assignment-section" class="space-y-6">
-                <!-- Assignment questions will be injected here by JS -->
-            </div>
-            <div id="assignment-results" class="mt-6 text-xl font-bold text-center"></div>
-             <div class="mt-4 text-right">
-                <button onclick="resetSection('assignment-section', assignmentQuestions, true)" class="btn btn-red">Reset</button>
-            </div>
-        </div>
-
-        <!-- Export Worksheet Section -->
-        <div class="card text-center">
-            <h2 class="text-2xl font-bold mb-4">Download Worksheet</h2>
-            <p class="mb-4">Click the button below to download a text file of this lesson's exercises for offline practice.</p>
-            <button onclick="downloadWorksheet()" class="btn btn-green text-lg">Export Worksheet (.txt)</button>
-        </div>
-
-        <!-- Further Reading Section -->
-        <div class="card">
-            <h2 class="text-2xl font-bold mb-4">Further Reading & References</h2>
-            <p class="mb-4">For more detailed explanations and examples, please visit these reputable online writing resources:</p>
-            <ul class="list-disc list-inside space-y-2">
-                <li><a href="https://owl.purdue.edu/owl/general_writing/punctuation/semicolons_colons_and_parentheses/semicolons.html" target="_blank" class="text-blue-600 hover:underline">Purdue Online Writing Lab (OWL): Semicolons</a></li>
-                <li><a href="https://writing.wisc.edu/handbook/grammarpunct/semicolons/" target="_blank" class="text-blue-600 hover:underline">The Writer's Handbook: Semicolons (University of Wisconsin-Madison)</a></li>
-                <li><a href="https://writingcenter.unc.edu/tips-and-tools/semi-colons-colons-and-dashes/" target="_blank" class="text-blue-600 hover:underline">The Writing Center: Semicolons, Colons, and Dashes (UNC-Chapel Hill)</a></li>
-                <li><a href="https://www.grammarly.com/blog/semicolon/" target="_blank" class="text-blue-600 hover:underline">Grammarly Blog: How to Use a Semicolon</a></li>
-            </ul>
-        </div>
     </div>
 
     <script>
-        const practiceQuestions = [
-            {
-                question: "The prototype is complete the team is ready to begin testing.",
-                options: [
-                    "The prototype is complete, the team is ready to begin testing.",
-                    "The prototype is complete; the team is ready to begin testing.",
-                    "The prototype is complete: the team is ready to begin testing."
-                ],
-                answer: 1,
-                explanation: "Rule 1: A semicolon is used to connect two closely related independent clauses. Using a comma here would create a comma splice error."
-            },
-            {
-                question: "The report was due on Monday, so the team worked all weekend.",
-                options: [
-                    "The report was due on Monday; so the team worked all weekend.",
-                    "The report was due on Monday, so the team worked all weekend.",
-                    "The report was due on Monday, so, the team worked all weekend."
-                ],
-                answer: 1,
-                explanation: "A semicolon is not needed here because the two clauses are already joined by a coordinating conjunction ('so'). A simple comma is correct."
-            },
-            {
-                question: "We visited three cities: London, England, Paris, France, and Rome, Italy.",
-                options: [
-                    "We visited three cities: London, England, Paris, France, and Rome, Italy.",
-                    "We visited three cities: London, England; Paris, France; and Rome, Italy.",
-                    "We visited three cities; London, England, Paris, France, and Rome, Italy."
-                ],
-                answer: 1,
-                explanation: "Rule 2: This is a complex list where each item contains a comma. A semicolon is needed to clearly separate the main items in the list (the cities and their countries)."
-            }
-        ];
+        const allQuestions = {
+            practice: [
+                 {
+                    question: "The technician said that the network is down.",
+                    options: [
+                        "The technician said, 'that the network is down.'",
+                        "The technician said that 'the network is down.'",
+                        "The technician said that the network is down."
+                    ],
+                    answer: 2,
+                    explanation: "This is an indirect quotation, so no quotation marks are needed."
+                },
+                {
+                    question: "The sign clearly reads Danger High Voltage.",
+                    options: [
+                        'The sign clearly reads, "Danger: High Voltage."',
+                        'The sign clearly reads, "Danger: High Voltage".',
+                        'The sign clearly reads: "Danger: High Voltage."'
+                    ],
+                    answer: 0,
+                    explanation: 'The period goes inside the closing quotation mark.'
+                }
+            ],
+            assessment: [
+                 {
+                    question: "Please read the article, The Future of AI.",
+                    options: [
+                        'Please read the article, "The Future of AI."',
+                        'Please read the article, The Future of AI.',
+                        'Please read the "article", The Future of AI.'
+                    ],
+                    answer: 0,
+                    explanation: 'Quotation marks are used for titles of articles.'
+                },
+                {
+                    question: 'The report concluded, All tests were successful.',
+                    options: [
+                        'The report concluded, "All tests were successful."',
+                        'The report concluded, "All tests were successful".',
+                        'The report concluded: "All tests were successful."'
+                    ],
+                    answer: 0,
+                    explanation: 'A comma is used to introduce the quote, and the period goes inside the closing mark.'
+                }
+            ],
+            assignment: [
+                 {
+                    question: "Which sentence is punctuated correctly?",
+                    options: [
+                        'He asked, "Are the schematics ready?"',
+                        'He asked, "Are the schematics ready"?',
+                        'He asked, "Are the schematics ready?".'
+                    ],
+                    answer: 0,
+                    explanation: "Question marks go inside the quotation marks if the quote itself is a question."
+                },
+                {
+                    question: "The term cloud computing refers to remote data storage.",
+                    options: [
+                        'The term, "cloud computing," refers to remote data storage.',
+                        'The term "cloud computing" refers to remote data storage.',
+                        'The term "cloud computing," refers to remote data storage.'
+                    ],
+                    answer: 1,
+                    explanation: "Quotation marks can be used to set off a technical term. No comma is needed after the term."
+                }
+            ]
+        };
 
-        const assessmentQuestions = [
-            {
-                question: "The power surge damaged the motherboard; therefore, the computer will not start.",
-                options: [
-                    "The power surge damaged the motherboard, therefore, the computer will not start.",
-                    "The power surge damaged the motherboard; therefore, the computer will not start.",
-                    "The power surge damaged the motherboard: therefore, the computer will not start."
-                ],
-                answer: 1,
-                explanation: "Rule 1: A semicolon is correctly used before a conjunctive adverb like 'therefore' that connects two independent clauses. A comma must follow the adverb."
-            },
-            {
-                question: "The controller sends a signal, the actuator responds.",
-                options: [
-                    "The controller sends a signal; the actuator responds.",
-                    "The controller sends a signal, the actuator responds.",
-                    "The controller sends a signal. The actuator responds."
-                ],
-                answer: 0,
-                explanation: "A semicolon is the best choice to show the close cause-and-effect relationship between these two independent clauses. A comma alone creates a comma splice."
-            },
-            {
-                question: "The new design, which is highly efficient; saves a lot of energy.",
-                options: [
-                    "The new design, which is highly efficient; saves a lot of energy.",
-                    "The new design, which is highly efficient, saves a lot of energy.",
-                    "The new design which is highly efficient; saves a lot of energy."
-                ],
-                answer: 1,
-                explanation: "A semicolon cannot be used here. The clause 'which is highly efficient' is a non-essential clause that should be set off by commas, not semicolons."
-            }
-        ];
-
-        const assignmentQuestions = [
-            {
-                question: "Choose the correctly punctuated sentence.",
-                options: [
-                    "The pressure is rising rapidly; we must vent the tank.",
-                    "The pressure is rising rapidly, we must vent the tank.",
-                    "The pressure is rising rapidly: we must vent the tank."
-                ],
-                answer: 0,
-                explanation: "The two clauses are complete sentences that are closely related. A semicolon is the correct punctuation to join them."
-            },
-            {
-                question: "Which sentence uses semicolons correctly in a list?",
-                options: [
-                    "I need to talk to three people: the project manager; the lead developer; and the client.",
-                    "The conference will be held in Austin, Texas; with speakers from MIT, Stanford, and Caltech.",
-                    "The speakers were Dr. Jones, a biologist; Dr. Chen, a chemist; and Dr. Singh, a physicist."
-                ],
-                answer: 2,
-                explanation: "This is a complex list where each item is a person and their title. Semicolons are used correctly to separate these items, each of which contains a comma."
-            },
-            {
-                question: "Which sentence is grammatically INCORRECT?",
-                options: [
-                    "The experiment was a success; although it took three attempts.",
-                    "The experiment was a success, although it took three attempts.",
-                    "The experiment was a success. It took three attempts."
-                ],
-                answer: 0,
-                explanation: "This is incorrect because 'although it took three attempts' is a dependent clause, not an independent one. A semicolon cannot join an independent clause and a dependent clause."
-            },
-            {
-                question: "The audit revealed several problems, however, all of them are fixable.",
-                options: [
-                    "The audit revealed several problems; however, all of them are fixable.",
-                    "The audit revealed several problems, however; all of them are fixable.",
-                    "The audit revealed several problems, however, all of them are fixable."
-                ],
-                answer: 0,
-                explanation: "When 'however' is used to connect two independent clauses, it should be preceded by a semicolon and followed by a comma."
-            }
-        ];
-        
-        let assignmentScore = 0;
-        let assignmentAnswered = 0;
-
-        function createMCQSection(containerId, questions, isAssignment = false) {
+        function createMCQSection(containerId, questions, sectionTitle, isAssignment = false) {
             const container = document.getElementById(containerId);
-            container.innerHTML = '';
+            const section = document.createElement('div');
+            section.className = 'card';
+            section.innerHTML = `<h2 class="text-2xl font-bold mb-4">${sectionTitle}</h2><p class="mb-4">Choose the sentence that is punctuated correctly.</p>`;
+            const questionContainer = document.createElement('div');
+            questionContainer.id = `${sectionTitle.toLowerCase()}-section`;
+            questionContainer.className = 'space-y-6';
             
             questions.forEach((q, qIndex) => {
                 const qDiv = document.createElement('div');
@@ -373,122 +295,80 @@
                 q.options.forEach((option, oIndex) => {
                     optionsHTML += `
                         <div class="flex items-center">
-                            <input type="radio" id="${containerId}-q${qIndex}o${oIndex}" name="${containerId}-q${qIndex}" value="${oIndex}" class="h-4 w-4 text-indigo-600 border-gray-300 focus:ring-indigo-500">
-                            <label for="${containerId}-q${qIndex}o${oIndex}" class="ml-3 block text-sm text-gray-900">${option}</label>
+                            <input type="radio" id="${qIndex}-${oIndex}" name="q-${qIndex}" value="${oIndex}" class="h-4 w-4 text-indigo-600 border-gray-300 focus:ring-indigo-500">
+                            <label for="${qIndex}-${oIndex}" class="ml-3 block text-sm text-gray-900">${option}</label>
                         </div>
                     `;
                 });
-
                 qDiv.innerHTML = `
                     <p class="font-medium text-gray-800">${qIndex + 1}. ${q.question}</p>
-                    <div id="${containerId}-feedback-q${qIndex}" class="space-y-2 mt-2">${optionsHTML}</div>
-                    <div id="${containerId}-explanation-q${qIndex}" class="explanation"></div>
+                    <div class="space-y-2 mt-2">${optionsHTML}</div>
+                    <div id="explanation-${qIndex}" class="explanation"></div>
                 `;
-                container.appendChild(qDiv);
+                questionContainer.appendChild(qDiv);
+            });
 
-                const optionsContainer = document.getElementById(`${containerId}-feedback-q${qIndex}`);
-                optionsContainer.addEventListener('change', (event) => {
-                    if(event.target.type === 'radio') {
-                        handleMCQSelection(containerId, qIndex, questions, isAssignment);
-                    }
+            section.appendChild(questionContainer);
+
+            if (isAssignment) {
+                 section.innerHTML += `<div id="assignment-results" class="mt-6 text-xl font-bold text-center"></div>`;
+            }
+
+            section.innerHTML += `<div class="mt-4 text-right"><button onclick="resetSection('${sectionTitle.toLowerCase()}', ${isAssignment})" class="btn btn-red">Reset</button></div>`;
+            container.appendChild(section);
+
+            questions.forEach((q, qIndex) => {
+                const optionsDiv = section.querySelector(`input[name="q-${qIndex}"]`).parentElement.parentElement;
+                optionsDiv.addEventListener('change', (event) => {
+                    handleMCQSelection(event, qIndex, q, isAssignment);
                 });
             });
         }
-        
-        function handleMCQSelection(containerId, qIndex, questions, isAssignment) {
-            const q = questions[qIndex];
-            const feedbackDiv = document.getElementById(`${containerId}-feedback-q${qIndex}`);
-            const selectedRadio = feedbackDiv.querySelector(`input[name="${containerId}-q${qIndex}"]:checked`);
-            
-            if (!selectedRadio) return;
 
-            const userAnswer = parseInt(selectedRadio.value);
-            const radios = feedbackDiv.querySelectorAll(`input[name="${containerId}-q${qIndex}"]`);
-            
-            radios.forEach(radio => {
+        let assignmentScore = 0;
+        let questionsAnswered = 0;
+
+        function handleMCQSelection(event, qIndex, questionData, isAssignment) {
+            const selectedRadio = event.target;
+            const explanationDiv = document.getElementById(`explanation-${qIndex}`);
+            const options = selectedRadio.parentElement.parentElement.querySelectorAll('input');
+
+            options.forEach(radio => {
                 radio.disabled = true;
-                const label = feedbackDiv.querySelector(`label[for="${radio.id}"]`);
-                label.classList.remove('correct-answer', 'incorrect-answer');
-
-                const radioValue = parseInt(radio.value);
-                if (radioValue === q.answer) {
+                const label = radio.parentElement.querySelector('label');
+                if (parseInt(radio.value) === questionData.answer) {
                     label.classList.add('correct-answer');
-                } else if (radioValue === userAnswer) {
+                } else if (radio.checked) {
                     label.classList.add('incorrect-answer');
                 }
             });
+            
+            explanationDiv.innerHTML = `<b>Explanation:</b> ${questionData.explanation}`;
+            explanationDiv.classList.add('show');
 
-            const explanationDiv = document.getElementById(`${containerId}-explanation-q${qIndex}`);
-            if (explanationDiv && q.explanation) {
-                explanationDiv.innerHTML = `<b>Explanation:</b> ${q.explanation}`;
-                explanationDiv.classList.add('show');
-            }
-
-            if(isAssignment) {
-                if(!selectedRadio.parentElement.hasAttribute('data-scored')) {
-                     if(userAnswer === q.answer) {
-                       assignmentScore++;
-                    }
-                    assignmentAnswered++;
-                    radios.forEach(r => r.parentElement.setAttribute('data-scored', 'true'));
+            if (isAssignment) {
+                if (parseInt(selectedRadio.value) === questionData.answer) {
+                    assignmentScore++;
                 }
-                const resultsDiv = document.getElementById('assignment-results');
-                resultsDiv.textContent = `Score: ${assignmentScore} out of ${questions.length}`;
+                questionsAnswered++;
+                document.getElementById('assignment-results').textContent = `Score: ${assignmentScore} / ${allQuestions.assignment.length}`;
             }
         }
-        
-        function resetSection(containerId, questions, isAssignment = false) {
+
+        function resetSection(section, isAssignment) {
+            const sectionQuestions = allQuestions[section];
+            const container = document.getElementById(`${section}-section`);
+            container.innerHTML = ''; // Simplified reset
             if (isAssignment) {
                 assignmentScore = 0;
-                assignmentAnswered = 0;
-                const resultsDiv = document.getElementById('assignment-results');
-                resultsDiv.textContent = '';
+                questionsAnswered = 0;
+                document.getElementById('assignment-results').textContent = '';
             }
-            createMCQSection(containerId, questions, isAssignment);
+            // Re-create the specific section that was reset
+            createMCQSection('mcq-container', sectionQuestions, section.charAt(0).toUpperCase() + section.slice(1), isAssignment);
         }
-
-        function formatQuestionsForWorksheet(title, questions) {
-            let text = `\n\n--- ${title} ---\n\n`;
-            text += `Instructions: Choose the sentence that is punctuated correctly.\n\n`;
-            questions.forEach((q, index) => {
-                text += `${index + 1}. ${q.question}\n`;
-                q.options.forEach((opt, optIndex) => {
-                    text += `   ${String.fromCharCode(97 + optIndex)}) ${opt}\n`;
-                });
-                text += '\n';
-            });
-            return text;
-        }
-
-        function downloadWorksheet() {
-            let worksheetContent = `Worksheet: Using Semicolons in Technical Writing\n`;
-            worksheetContent += `Developed by Dr. Mazen Badawy – Doctorate of English Teaching & Testing\n`;
-            worksheetContent += `=================================================================\n\n`;
-
-            worksheetContent += `** Part 1: Key Rules **\n\n`;
-            worksheetContent += `Rule 1: To Connect Related Independent Clauses\n`;
-            worksheetContent += `- Use a semicolon to join two complete sentences that are closely related in thought.\n`;
-            worksheetContent += `- Example: The stress test was completed; the results were conclusive.\n\n`;
-            worksheetContent += `Rule 2: To Separate Items in a Complex List\n`;
-            worksheetContent += `- Use a semicolon to separate items in a list when the items themselves contain commas.\n`;
-            worksheetContent += `- Example: The project team included members from Cairo, Egypt; Riyadh, Saudi Arabia; and Dubai, UAE.\n`;
-
-            worksheetContent += formatQuestionsForWorksheet("Part 2: Practice Questions", practiceQuestions);
-            worksheetContent += formatQuestionsForWorksheet("Part 3: Assessment Questions", assessmentQuestions);
-            worksheetContent += formatQuestionsForWorksheet("Part 4: Assignment Questions", assignmentQuestions);
-
-            const blob = new Blob([worksheetContent], { type: 'text/plain;charset=utf-8' });
-            const link = document.createElement('a');
-            link.href = URL.createObjectURL(blob);
-            link.download = 'semicolons_worksheet.txt';
-            document.body.appendChild(link);
-            link.click();
-            document.body.removeChild(link);
-        }
-
-
+        
         document.addEventListener('DOMContentLoaded', () => {
-            // Warm-up button
             const revealBtn = document.getElementById('reveal-warmup-btn');
             const warmupExplanation = document.getElementById('warmup-explanation');
             revealBtn.addEventListener('click', () => {
@@ -496,43 +376,56 @@
                 revealBtn.textContent = warmupExplanation.classList.contains('show') ? 'Hide Explanation' : 'Reveal Explanation';
             });
 
-            // Drag and Drop Logic
-            const semicolon = document.querySelector('.semicolon-draggable');
+            const quotationMark = document.querySelector('.quotation-draggable');
             const dropZones = document.querySelectorAll('.drop-zone');
 
-            semicolon.addEventListener('dragstart', (e) => {
-                e.dataTransfer.setData('text/plain', ';');
+            quotationMark.addEventListener('dragstart', (e) => {
+                e.dataTransfer.setData('text/plain', '"');
             });
 
-            dropZones.forEach(zone => {
+             dropZones.forEach(zone => {
                 zone.addEventListener('dragover', (e) => {
                     e.preventDefault();
                     zone.classList.add('drag-over');
                 });
-
-                zone.addEventListener('dragleave', () => {
-                    zone.classList.remove('drag-over');
-                });
-
+                zone.addEventListener('dragleave', () => zone.classList.remove('drag-over'));
                 zone.addEventListener('drop', (e) => {
                     e.preventDefault();
                     zone.classList.remove('drag-over');
-                    const isCorrect = zone.dataset.correct === 'true';
-                    
-                    if (zone.textContent === '') { 
-                        zone.textContent = e.dataTransfer.getData('text');
-                        zone.classList.add(isCorrect ? 'correct' : 'incorrect');
+                    if(zone.innerHTML === '') {
+                        zone.innerHTML = e.dataTransfer.getData('text');
+                        zone.classList.add(zone.dataset.correct ? 'correct' : 'incorrect');
                     }
                 });
             });
 
-            createMCQSection('practice-section', practiceQuestions);
-            createMCQSection('assessment-section', assessmentQuestions);
-            createMCQSection('assignment-section', assignmentQuestions, true);
+            createMCQSection('mcq-container', allQuestions.practice, 'Practice');
+            createMCQSection('mcq-container', allQuestions.assessment, 'Assessment');
+            createMCQSection('mcq-container', allQuestions.assignment, 'Assignment', true);
         });
 
-    </script>
+        function downloadWorksheet() {
+            let content = "Worksheet: Quotation Marks in Technical Writing\n";
+            content += "===============================================\n\n";
 
+            for (const section in allQuestions) {
+                content += `--- ${section.toUpperCase()} ---\n\n`;
+                allQuestions[section].forEach((q, i) => {
+                    content += `${i + 1}. ${q.question}\n`;
+                    q.options.forEach((opt, j) => {
+                        content += `   ${String.fromCharCode(97 + j)}) ${opt}\n`;
+                    });
+                    content += "\n";
+                });
+            }
+
+            const blob = new Blob([content], { type: 'text/plain' });
+            const link = document.createElement('a');
+            link.href = URL.createObjectURL(blob);
+            link.download = 'quotation_marks_worksheet.txt';
+            link.click();
+        }
+
+    </script>
 </body>
 </html>
-
