@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Using a Technology-Enhanced Flipped Classroom to Improve EFL Engineering Students’ Punctuation Marks</title>
+    <title>Lesson: Using Colons in Technical Writing</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
@@ -15,7 +15,6 @@
             background-color: #00796b;
             color: white;
             padding: 1rem;
-            text-align: center;
             font-size: 1.25rem;
             font-weight: 600;
             display: flex;
@@ -94,7 +93,7 @@
             padding: 0.75rem;
         }
         /* Drag and Drop Styles */
-        .comma-draggable {
+        .colon-draggable {
             display: inline-block;
             font-size: 1.5rem;
             font-weight: bold;
@@ -130,21 +129,21 @@
 <body>
 
     <header class="header">
-        <span>Developed by Dr. Mazen Badawy – Doctorate of English Teaching & Testing</span>
+        <span>Using a Technology-Enhanced Flipped Classroom to Improve EFL Engineering Students’ Punctuation Marks</span>
         <a href="https://mazenegykfs.github.io/Flipped-Classroom/index.html" class="btn btn-home">Home</a>
     </header>
 
     <div class="container mx-auto p-4 md:p-8">
-        <h1 class="text-3xl md:text-4xl font-bold text-center mb-8">Using Commas in Technical Writing</h1>
+        <h1 class="text-3xl md:text-4xl font-bold text-center mb-8">Using Colons in Technical Writing</h1>
 
         <!-- Objectives -->
         <div class="card">
             <h2 class="text-2xl font-bold mb-4">1. Objectives</h2>
             <ul class="list-disc list-inside space-y-2">
-                <li>Use commas correctly to separate items in a series.</li>
-                <li>Use commas with coordinating conjunctions to join independent clauses.</li>
-                <li>Use commas to set off introductory elements from the main clause.</li>
-                <li>Use commas to set off non-essential clauses and phrases.</li>
+                <li>Use a colon to correctly introduce a list.</li>
+                <li>Use a colon to introduce an explanation, example, or important point.</li>
+                <li>Ensure the clause preceding a colon is a complete sentence.</li>
+                <li>Recognize the conventional uses of colons in titles, ratios, and time.</li>
             </ul>
         </div>
 
@@ -152,48 +151,37 @@
         <div class="grid md:grid-cols-2 gap-6">
             <div class="card">
                 <h2 class="text-2xl font-bold mb-4">2. Review</h2>
-                <p class="mb-2">A <strong>comma (,)</strong> is a punctuation mark that indicates a brief pause in a sentence. It helps to separate ideas, phrases, and clauses, making sentences easier to read and understand.</p>
+                <p class="mb-2">A <strong>colon (:)</strong> is a punctuation mark used to signal that something will follow: a list, an explanation, an example, or a quotation. It directs the reader's attention to the information that comes after it.</p>
             </div>
             <div class="card">
                 <h2 class="text-2xl font-bold mb-4">3. Warm-up</h2>
-                <p class="mb-2">How does the comma change the meaning of this sentence?</p>
-                <p class="italic">1. The project requires experienced engineers and managers.</p>
-                <p class="italic">2. The project requires experienced engineers, and managers.</p>
+                <p class="mb-2">How does the colon change the emphasis of this sentence?</p>
+                <p class="italic">1. The experiment had one catastrophic result the main computer exploded.</p>
+                <p class="italic">2. The experiment had one catastrophic result: the main computer exploded.</p>
                 <button id="reveal-warmup-btn" class="btn btn-green mt-2">Reveal Explanation</button>
                 <div id="warmup-explanation" class="explanation">
-                    Sentence 1 implies that both the engineers and managers must be experienced. Sentence 2 could imply that the engineers must be experienced, but the managers might not be. Commas clarify meaning!
+                    The colon in Sentence 2 creates a dramatic pause, emphasizing that the explosion was the "catastrophic result." It formally connects the cause and the effect, making the statement more powerful.
                 </div>
             </div>
         </div>
         
         <!-- Presentation -->
         <div class="card">
-            <h2 class="text-2xl font-bold mb-4">4. Presentation: Four Key Comma Rules</h2>
+            <h2 class="text-2xl font-bold mb-4">4. Presentation: Two Key Colon Rules</h2>
             <div class="space-y-6">
                 <!-- Rule 1 -->
                  <div>
-                    <h3 class="text-xl font-semibold">Rule 1: Commas in a Series</h3>
-                    <p class="mt-1">Use commas to separate three or more words, phrases, or clauses in a list.</p>
-                    <p class="mt-2 p-3 bg-gray-100 rounded-md"><b>Example:</b> The design requires steel<span class="font-bold text-blue-700">,</span> copper<span class="font-bold text-blue-700">,</span> and aluminum.</p>
-                    <p class="mt-1"><small>Note: The final comma before 'and' is called the Oxford or serial comma. In technical writing, it is highly recommended to prevent ambiguity.</small></p>
+                    <h3 class="text-xl font-semibold">Rule 1: To Introduce a List</h3>
+                    <p class="mt-1">Use a colon after an independent clause (a complete sentence) to introduce a list of items.</p>
+                    <p class="mt-2 p-3 bg-gray-100 rounded-md"><b>Correct:</b> The circuit requires three components<span class="font-bold text-blue-700">:</span> a resistor, a capacitor, and an inductor.</p>
+                    <p class="mt-2 p-3 bg-red-100 rounded-md"><b>Incorrect:</b> The required components are: a resistor, a capacitor, and an inductor. (The part before the colon is not a complete sentence).</p>
                 </div>
                 <!-- Rule 2 -->
                 <div>
-                    <h3 class="text-xl font-semibold">Rule 2: Comma Before a Coordinating Conjunction</h3>
-                    <p class="mt-1">Use a comma before a coordinating conjunction (for, and, nor, but, or, yet, so) when it joins two independent clauses.</p>
-                    <p class="mt-2 p-3 bg-gray-100 rounded-md"><b>Example:</b> The test results were positive<span class="font-bold text-blue-700">,</span> but the team decided to run a second verification.</p>
-                </div>
-                <!-- Rule 3 -->
-                <div>
-                    <h3 class="text-xl font-semibold">Rule 3: Comma After an Introductory Element</h3>
-                    <p class="mt-1">Use a comma to separate an introductory word, phrase, or clause from the main clause of the sentence.</p>
-                    <p class="mt-2 p-3 bg-gray-100 rounded-md"><b>Example:</b> After analyzing the data<span class="font-bold text-blue-700">,</span> the engineers identified the primary fault.</p>
-                </div>
-                <!-- Rule 4 -->
-                <div>
-                    <h3 class="text-xl font-semibold">Rule 4: Commas with Non-Essential Elements</h3>
-                    <p class="mt-1">Use a pair of commas to set off clauses, phrases, and words that are not essential to the meaning of the sentence.</p>
-                    <p class="mt-2 p-3 bg-gray-100 rounded-md"><b>Example:</b> The main turbine<span class="font-bold text-blue-700">,</span> which was recently serviced<span class="font-bold text-blue-700">,</span> is operating at peak efficiency.</p>
+                    <h3 class="text-xl font-semibold">Rule 2: To Introduce an Explanation or Example</h3>
+                    <p class="mt-1">Use a colon after an independent clause to introduce a further explanation, a clarification, or a key example.</p>
+                    <p class="mt-2 p-3 bg-gray-100 rounded-md"><b>Example:</b> The system has a critical flaw<span class="font-bold text-blue-700">:</span> it overheats under minimal load.</p>
+                    <p class="mt-2 p-3 bg-gray-100 rounded-md"><b>Example:</b> The results pointed to one conclusion<span class="font-bold text-blue-700">:</span> the hypothesis was correct.</p>
                 </div>
             </div>
         </div>
@@ -202,16 +190,16 @@
         <div class="card">
             <h2 class="text-2xl font-bold mb-4">5. Interactive Practice: Drag & Drop</h2>
             <div class="flex items-center space-x-4 p-4 bg-gray-100 rounded-lg">
-                <p>Drag this comma:</p>
-                <div id="comma-bank">
-                    <span class="comma-draggable" draggable="true">,</span>
+                <p>Drag this colon:</p>
+                <div id="colon-bank">
+                    <span class="colon-draggable" draggable="true">:</span>
                 </div>
             </div>
             <div id="drag-drop-sentences" class="mt-4 space-y-4 text-lg">
-                <p>1. Before starting the engine<span class="drop-zone" data-correct="true"></span> check the oil levels.</p>
-                <p>2. The system has three main parts: the sensor<span class="drop-zone" data-correct="true"></span> the processor<span class="drop-zone" data-correct="true"></span> and the actuator.</p>
-                <p>3. The schematic was clear<span class="drop-zone" data-correct="true"></span> so the technician began the assembly.</p>
-                <p>4. The new material<span class="drop-zone" data-correct="true"></span> which is lighter than aluminum<span class="drop-zone" data-correct="true"></span> is also much stronger.</p>
+                <p>1. The report can be summarized in one word<span class="drop-zone" data-correct="true"></span> success.</p>
+                <p>2. We need to order the following parts<span class="drop-zone" data-correct="true"></span> bolts, washers, and nuts.</p>
+                <p>3. The team had one goal<span class="drop-zone" data-correct="true"></span> to finish the project on time.</p>
+                <p>4. The data shows a clear trend<span class="drop-zone" data-correct="true"></span> sales have increased by 20%.</p>
             </div>
         </div>
 
@@ -264,10 +252,10 @@
             <h2 class="text-2xl font-bold mb-4">Further Reading & References</h2>
             <p class="mb-4">For more detailed explanations and examples, please visit these reputable online writing resources:</p>
             <ul class="list-disc list-inside space-y-2">
-                <li><a href="https://owl.purdue.edu/owl/general_writing/punctuation/commas/index.html" target="_blank" class="text-blue-600 hover:underline">Purdue Online Writing Lab (OWL): The Comma</a></li>
-                <li><a href="https://writing.wisc.edu/handbook/grammarpunct/commas/" target="_blank" class="text-blue-600 hover:underline">The Writer's Handbook: Commas (University of Wisconsin-Madison)</a></li>
-                <li><a href="https://writingcenter.unc.edu/tips-and-tools/commas/" target="_blank" class="text-blue-600 hover:underline">The Writing Center: Commas (UNC-Chapel Hill)</a></li>
-                <li><a href="https://www.grammarly.com/blog/comma/" target="_blank" class="text-blue-600 hover:underline">Grammarly Blog: How to Use a Comma</a></li>
+                <li><a href="https://owl.purdue.edu/owl/general_writing/punctuation/semicolons_colons_and_parentheses/colons.html" target="_blank" class="text-blue-600 hover:underline">Purdue Online Writing Lab (OWL): Colons</a></li>
+                <li><a href="https://writing.wisc.edu/handbook/grammarpunct/colons/" target="_blank" class="text-blue-600 hover:underline">The Writer's Handbook: Colons (University of Wisconsin-Madison)</a></li>
+                <li><a href="https://writingcenter.unc.edu/tips-and-tools/semi-colons-colons-and-dashes/" target="_blank" class="text-blue-600 hover:underline">The Writing Center: Semicolons, Colons, and Dashes (UNC-Chapel Hill)</a></li>
+                <li><a href="https://www.grammarly.com/blog/colon/" target="_blank" class="text-blue-600 hover:underline">Grammarly Blog: How to Use a Colon</a></li>
             </ul>
         </div>
     </div>
@@ -275,110 +263,110 @@
     <script>
         const practiceQuestions = [
             {
-                question: "The manual includes sections on installation maintenance and troubleshooting.",
+                question: "The project needs: a programmer, a designer, and a tester.",
                 options: [
-                    "The manual includes sections on installation, maintenance, and troubleshooting.",
-                    "The manual includes sections on installation, maintenance and troubleshooting.",
-                    "The manual includes sections on installation maintenance, and troubleshooting."
-                ],
-                answer: 0,
-                explanation: "Rule 1: Use commas to separate three or more items in a series. The Oxford comma after 'maintenance' is standard in technical writing."
-            },
-            {
-                question: "The generator provides power but it is extremely loud.",
-                options: [
-                    "The generator provides power, but it is extremely loud.",
-                    "The generator provides power but, it is extremely loud.",
-                    "The generator provides power but it is extremely loud."
-                ],
-                answer: 0,
-                explanation: "Rule 2: A comma is needed before the coordinating conjunction 'but' because it connects two independent clauses."
-            },
-            {
-                question: "To avoid overheating we installed a new cooling fan.",
-                options: [
-                    "To avoid overheating we installed a new cooling fan.",
-                    "To avoid overheating, we installed a new cooling fan.",
-                    "To avoid, overheating we installed a new cooling fan."
+                    "The project needs: a programmer, a designer, and a tester.",
+                    "The project needs the following staff: a programmer, a designer, and a tester.",
+                    "The project needs; a programmer, a designer, and a tester."
                 ],
                 answer: 1,
-                explanation: "Rule 3: The phrase 'To avoid overheating' is an introductory element and must be separated from the main clause with a comma."
+                explanation: "Rule 1: The clause before a colon must be a complete sentence. 'The project needs' is not a complete sentence on its own."
+            },
+            {
+                question: "The engine failed for one reason it ran out of oil.",
+                options: [
+                    "The engine failed for one reason, it ran out of oil.",
+                    "The engine failed for one reason; it ran out of oil.",
+                    "The engine failed for one reason: it ran out of oil."
+                ],
+                answer: 2,
+                explanation: "Rule 2: A colon is used to introduce an explanation that follows an independent clause. The second clause explains the 'one reason'."
+            },
+            {
+                question: "I have to buy three things bread, milk, and eggs.",
+                options: [
+                    "I have to buy three things: bread, milk, and eggs.",
+                    "I have to buy: bread, milk, and eggs.",
+                    "I have to buy three things; bread, milk, and eggs."
+                ],
+                answer: 0,
+                explanation: "Rule 1: The clause 'I have to buy three things' is a complete sentence, making it correct to use a colon to introduce the list."
             }
         ];
 
         const assessmentQuestions = [
             {
-                question: "Dr. Al-Fayed the lead researcher will present the findings.",
+                question: "The safety manual lists several warnings such as: wear safety glasses, use ear protection, and check equipment.",
                 options: [
-                    "Dr. Al-Fayed, the lead researcher, will present the findings.",
-                    "Dr. Al-Fayed, the lead researcher will present the findings.",
-                    "Dr. Al-Fayed the lead researcher, will present the findings."
+                    "The safety manual lists several warnings such as: wear safety glasses and use ear protection.",
+                    "The safety manual lists several warnings: wear safety glasses, use ear protection, and check equipment.",
+                    "The safety manual lists several warnings, such as, wear safety glasses and use ear protection."
                 ],
-                answer: 0,
-                explanation: "Rule 4: The phrase 'the lead researcher' is a non-essential element that renames Dr. Al-Fayed. It should be set off with a pair of commas."
+                answer: 1,
+                explanation: "Do not use a colon after phrases like 'such as' or 'including'. The clause before the colon must be independent."
             },
             {
-                question: "The software compiled without errors yet the program crashed on startup.",
+                question: "The experiment was a success The team met all objectives.",
                 options: [
-                    "The software compiled without errors, yet the program crashed on startup.",
-                    "The software compiled without errors yet, the program crashed on startup.",
-                    "The software compiled without errors yet the program crashed on startup."
+                    "The experiment was a success, the team met all objectives.",
+                    "The experiment was a success: the team met all objectives.",
+                    "The experiment was a success; The team met all objectives."
                 ],
-                answer: 0,
-                explanation: "Rule 2: A comma is required before the conjunction 'yet' when it joins two complete sentences."
+                answer: 1,
+                explanation: "Rule 2: The second clause explains *how* the experiment was a success, so a colon is the best choice to connect these two independent clauses."
             },
             {
-                question: "We need a plan that is effective efficient and affordable.",
+                question: "The report is titled 'Advanced Robotics An Introduction.'",
                 options: [
-                    "We need a plan that is effective, efficient, and affordable.",
-                    "We need a plan that is effective, efficient and, affordable.",
-                    "We need a plan that is effective efficient, and affordable."
+                    "The report is titled, 'Advanced Robotics: An Introduction.'",
+                    "The report is titled 'Advanced Robotics, An Introduction.'",
+                    "The report is titled 'Advanced Robotics: An Introduction.'"
                 ],
-                answer: 0,
-                explanation: "Rule 1: Commas are used to separate adjectives in a series that describe the same noun."
+                answer: 2,
+                explanation: "A colon is conventionally used to separate a main title from a subtitle."
             }
         ];
 
         const assignmentQuestions = [
             {
-                question: "Choose the correctly punctuated sentence.",
-                options: [
-                    "Although the design was innovative, it was too expensive to produce.",
-                    "Although the design was innovative it was too expensive to produce.",
-                    "Although, the design was innovative it was too expensive to produce."
-                ],
-                answer: 0,
-                explanation: "Rule 3: A comma is needed after the introductory dependent clause 'Although the design was innovative'."
-            },
-            {
                 question: "Which sentence is INCORRECT?",
                 options: [
-                    "The first test failed, so we adjusted the parameters.",
-                    "The parts, that were ordered last week, have finally arrived.",
-                    "In 2023, the company launched three new products."
-                ],
-                answer: 1,
-                explanation: "The commas in this sentence are incorrect. The clause 'that were ordered last week' is essential to identify which parts arrived, so it should not be set off by commas."
-            },
-            {
-                question: "The engineer checked the wiring the plumbing and the ventilation system.",
-                options: [
-                    "The engineer checked the wiring, the plumbing, and the ventilation system.",
-                    "The engineer checked the wiring, the plumbing, and, the ventilation system.",
-                    "The engineer checked the wiring the plumbing, and the ventilation system."
+                    "The primary colors are: red, yellow, and blue.",
+                    "Remember the old saying: 'Measure twice, cut once.'",
+                    "We have one mission: to deliver a flawless product."
                 ],
                 answer: 0,
-                explanation: "Rule 1: Commas must be used to separate all items in a list of three or more."
+                explanation: "This is incorrect because 'The primary colors are' is not a complete sentence. A colon should not separate a verb from its objects."
             },
             {
-                question: "The computer model which took hours to build produced an accurate simulation.",
+                question: "Choose the correctly punctuated sentence.",
                 options: [
-                    "The computer model which took hours to build produced an accurate simulation.",
-                    "The computer model, which took hours to build, produced an accurate simulation.",
-                    "The computer model, which took hours to build produced an accurate simulation."
+                    "The machine requires two types of lubricant; oil and grease.",
+                    "The machine requires two types of lubricant: oil and grease.",
+                    "The machine requires: oil and grease."
                 ],
                 answer: 1,
-                explanation: "Rule 4: The clause 'which took hours to build' is non-essential extra information. It must be set off from the main sentence by a pair of commas."
+                explanation: "The clause 'The machine requires two types of lubricant' is independent and complete, so a colon is correct for introducing the list."
+            },
+            {
+                question: "The mixture requires a 3:1 ratio of water to acid.",
+                options: [
+                    "The mixture requires a 3,1 ratio of water to acid.",
+                    "The mixture requires a 3-1 ratio of water to acid.",
+                    "The mixture requires a 3:1 ratio of water to acid."
+                ],
+                answer: 2,
+                explanation: "Colons are used to express ratios."
+            },
+            {
+                question: "He said only one thing 'The project is delayed.'",
+                options: [
+                    "He said only one thing: 'The project is delayed.'",
+                    "He said only one thing, 'The project is delayed.'",
+                    "He said only one thing; 'The project is delayed.'"
+                ],
+                answer: 0,
+                explanation: "Rule 2: The colon is used correctly here to introduce a quotation that explains the 'one thing' he said."
             }
         ];
         
@@ -449,7 +437,7 @@
             if(isAssignment) {
                 if(!selectedRadio.parentElement.hasAttribute('data-scored')) {
                      if(userAnswer === q.answer) {
-                        assignmentScore++;
+                       assignmentScore++;
                     }
                     assignmentAnswered++;
                     radios.forEach(r => r.parentElement.setAttribute('data-scored', 'true'));
@@ -483,15 +471,13 @@
         }
 
         function downloadWorksheet() {
-            let worksheetContent = `Worksheet: Using Commas in Technical Writing\n`;
+            let worksheetContent = `Worksheet: Using Colons in Technical Writing\n`;
             worksheetContent += `Developed by Dr. Mazen Badawy – Doctorate of English Teaching & Testing\n`;
             worksheetContent += `=================================================================\n\n`;
 
             worksheetContent += `** Part 1: Key Rules **\n\n`;
-            worksheetContent += `Rule 1: Commas in a Series\n- Example: The design requires steel, copper, and aluminum.\n\n`;
-            worksheetContent += `Rule 2: Comma Before a Coordinating Conjunction\n- Example: The test results were positive, but the team decided to run a second verification.\n\n`;
-            worksheetContent += `Rule 3: Comma After an Introductory Element\n- Example: After analyzing the data, the engineers identified the primary fault.\n\n`;
-            worksheetContent += `Rule 4: Commas with Non-Essential Elements\n- Example: The main turbine, which was recently serviced, is operating at peak efficiency.\n`;
+            worksheetContent += `Rule 1: To Introduce a List\n- Example: The circuit requires three components: a resistor, a capacitor, and an inductor.\n\n`;
+            worksheetContent += `Rule 2: To Introduce an Explanation or Example\n- Example: The system has a critical flaw: it overheats under minimal load.\n`;
 
             worksheetContent += formatQuestionsForWorksheet("Part 2: Practice Questions", practiceQuestions);
             worksheetContent += formatQuestionsForWorksheet("Part 3: Assessment Questions", assessmentQuestions);
@@ -500,7 +486,7 @@
             const blob = new Blob([worksheetContent], { type: 'text/plain;charset=utf-8' });
             const link = document.createElement('a');
             link.href = URL.createObjectURL(blob);
-            link.download = 'commas_worksheet.txt';
+            link.download = 'colons_worksheet.txt';
             document.body.appendChild(link);
             link.click();
             document.body.removeChild(link);
@@ -517,11 +503,11 @@
             });
 
             // Drag and Drop Logic
-            const comma = document.querySelector('.comma-draggable');
+            const colon = document.querySelector('.colon-draggable');
             const dropZones = document.querySelectorAll('.drop-zone');
 
-            comma.addEventListener('dragstart', (e) => {
-                e.dataTransfer.setData('text/plain', ',');
+            colon.addEventListener('dragstart', (e) => {
+                e.dataTransfer.setData('text/plain', ':');
             });
 
             dropZones.forEach(zone => {
