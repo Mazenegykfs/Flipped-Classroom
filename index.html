@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homepage: Technical Writing & Punctuation</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f0f9ff; /* Lighter blue background for the whole page */
+        }
+        .header {
+            background-color: #00796b;
+            color: white;
+            padding: 1rem;
+            text-align: center;
+            font-size: 1.25rem;
+            font-weight: 600;
+        }
+        .card {
+            background-color: white;
+            border-radius: 0.75rem;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+        }
+        h1, h2, h3, h4 {
+            color: #004d40;
+        }
+    </style>
+</head>
+<body>
+
+    <header class="header">
+        Developed by Dr. Mazen Badawy – Doctorate of English Teaching & Testing
+    </header>
+
+    <div class="flex flex-col md:flex-row">
+        <!-- Sidebar Navigation -->
+        <aside class="w-full md:w-72 bg-white md:min-h-screen p-4 md:p-6 shadow-md flex-shrink-0">
+            <h2 class="text-2xl font-bold mb-4 text-center md:text-left text-teal-800">Course Lessons</h2>
+            <nav id="lesson-nav" class="space-y-2">
+                <!-- Lesson links will be dynamically injected here by JavaScript -->
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="flex-grow p-4 md:p-8">
+            <!-- Introduction Section -->
+            <div class="card text-gray-800">
+                <h2 class="text-2xl font-bold mb-2">Comprehensive Teacher's Guide</h2>
+                <p class="text-md text-gray-600 mb-6">Using a Technology-Enhanced Flipped Classroom to Improve EFL Engineering Students’ Punctuation Marks</p>
+                
+                <div class="border-t pt-4">
+                    <h3 class="text-xl font-bold mb-3">1. Introduction and Pedagogical Framework</h3>
+                    
+                    <h4 class="text-lg font-semibold mt-4 mb-2">1.1. Purpose and Rationale</h4>
+                    <p class="mb-3">This guide is designed for instructors implementing the "Punctuation for Technical Writing" curriculum with intermediate EFL (English as a Foreign Language) engineering students. The core pedagogical approach is the Technology-Enhanced Flipped Classroom.</p>
+                    <p>The rationale for this model is twofold:</p>
+                    <ul class="list-disc list-inside space-y-2 mt-2 pl-4">
+                        <li><strong class="font-semibold">Efficiency:</strong> It moves the passive activity of information absorption (learning the rules) outside of the classroom, dedicating valuable, face-to-face time to active, collaborative learning and problem-solving.</li>
+                        <li><strong class="font-semibold">Effectiveness for EFL Learners:</strong> It allows students to learn foundational concepts at their own pace, re-watching, and reviewing as needed. In-class time can then be used to address specific language challenges, practice application with instructor guidance, and build confidence through peer interaction. For engineers, precision in language is paramount; this model allows for the deep practice necessary to achieve it.</li>
+                    </ul>
+
+                    <h4 class="text-lg font-semibold mt-6 mb-2">1.2. The Flipped Classroom Model: A Two-Phase Approach</h4>
+                    <p>This curriculum divides learning into two distinct phases:</p>
+                    <div class="mt-4 space-y-4 pl-4">
+                         <div>
+                            <h5 class="font-semibold">Phase 1: The Individual Space (Before Class)</h5>
+                            <p class="ml-4 mt-1"><strong class="font-semibold">What:</strong> Students engage with the interactive, self-paced web lesson on their own time. They learn the core rules and complete the initial practice exercises.</p>
+                            <p class="ml-4 mt-1"><strong class="font-semibold">Why:</strong> This empowers students to take ownership of their learning and ensures they arrive in class with a foundational understanding of the material. The technology provides instant feedback that a traditional lecture cannot.</p>
+                        </div>
+                         <div>
+                            <h5 class="font-semibold">Phase 2: The Group Space (During Class)</h5>
+                            <p class="ml-4 mt-1"><strong class="font-semibold">What:</strong> Classroom time is transformed into a hands-on workshop. The instructor's role shifts from "lecturer" to "facilitator." Students engage in collaborative activities, apply their knowledge to complex problems, and receive targeted support.</p>
+                            <p class="ml-4 mt-1"><strong class="font-semibold">Why:</strong> This is where true learning is solidified. Students move from knowing the rules to using the rules in authentic contexts, clarifying misconceptions, and learning from one another.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        const lessons = [
+            { title: 'Commas', url: 'https://mazenegykfs.github.io/Flipped-Classroom/01.Commas.html' },
+            { title: 'Colons', url: 'https://mazenegykfs.github.io/Flipped-Classroom/02.colons.html' },
+            { title: 'Semi-colons', url: 'https://mazenegykfs.github.io/Flipped-Classroom/03.semi-colons.html' },
+            { title: 'Quotation Marks', url: 'https://mazenegykfs.github.io/Flipped-Classroom/04.Quotation marks.html' },
+            { title: 'Exclamation Marks', url: 'https://mazenegykfs.github.io/Flipped-Classroom/05.exclamation marks.html' },
+            { title: 'Periods', url: 'https://mazenegykfs.github.io/Flipped-Classroom/06.periods.html' },
+            { title: 'Question Marks', url: 'https://mazenegykfs.github.io/Flipped-Classroom/07.question mark.html' },
+            { title: 'Capitalization', url: 'https://mazenegykfs.github.io/Flipped-Classroom/08.Capitalization.html' },
+            { title: 'Dashes and Hyphens', url: 'https://mazenegykfs.github.io/Flipped-Classroom/09.Dashes and Hyphens.html' },
+            { title: 'Parentheses Vs Quotation Marks', url: 'https://mazenegykfs.github.io/Flipped-Classroom/10.Parentheses Vs Quotation Marks.html' },
+            { title: 'Revision', url: 'https://mazenegykfs.github.io/Flipped-Classroom/11.Revision.html' }
+        ];
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const nav = document.getElementById('lesson-nav');
+            lessons.forEach(lesson => {
+                const link = document.createElement('a');
+                link.href = lesson.url;
+                link.target = "_blank"; // Open in new tab
+                link.className = 'block p-3 rounded-lg text-gray-700 font-medium hover:bg-teal-50 hover:text-teal-800 transition-colors duration-200';
+                link.textContent = lesson.title;
+                nav.appendChild(link);
+            });
+        });
+    </script>
+
+</body>
+</html>
+
