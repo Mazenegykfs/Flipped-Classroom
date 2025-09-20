@@ -80,7 +80,7 @@
             transition: max-height 0.5s ease-out, padding 0.5s ease-out;
         }
         .explanation.show {
-            max-height: 100px; /* Adjust as needed */
+            max-height: 200px; /* Increased height for longer explanations */
             padding: 0.75rem;
         }
         /* Drag and Drop Styles */
@@ -103,6 +103,7 @@
             border-radius: 4px;
             margin: 0 2px;
             transition: background-color 0.3s;
+            vertical-align: bottom; /* Align with text */
         }
         .drop-zone.drag-over {
             background-color: #a7ffeb;
@@ -137,14 +138,37 @@
             </ul>
         </div>
 
+        <!-- NEW: Values & Life Skills -->
+        <div class="card">
+            <h2 class="text-2xl font-bold mb-4">2. Values & Life Skills</h2>
+            <div class="grid md:grid-cols-2 gap-6">
+                <div>
+                    <h3 class="text-xl font-semibold mb-2">Values</h3>
+                    <ul class="list-disc list-inside space-y-1">
+                        <li><strong>Clarity:</strong> Using correct punctuation makes your writing unambiguous.</li>
+                        <li><strong>Precision:</strong> Choosing the right end mark conveys the exact intended tone.</li>
+                        <li><strong>Professionalism:</strong> Proper grammar and punctuation are hallmarks of professional communication.</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-semibold mb-2">Life Skills</h3>
+                    <ul class="list-disc list-inside space-y-1">
+                        <li><strong>Effective Communication:</strong> Asking clear questions and reporting information accurately.</li>
+                        <li><strong>Attention to Detail:</strong> Recognizing subtle but important grammatical rules.</li>
+                        <li><strong>Critical Thinking:</strong> Analyzing sentence structure to determine its function (statement vs. inquiry).</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
         <!-- Review & Warm-up -->
         <div class="grid md:grid-cols-2 gap-6">
             <div class="card">
-                <h2 class="text-2xl font-bold mb-4">2. Review</h2>
+                <h2 class="text-2xl font-bold mb-4">3. Review</h2>
                 <p class="mb-2">A <strong>question mark (?)</strong> is an end punctuation mark that is used to indicate a direct question. It signals to the reader that a response is being sought.</p>
             </div>
             <div class="card">
-                <h2 class="text-2xl font-bold mb-4">3. Warm-up</h2>
+                <h2 class="text-2xl font-bold mb-4">4. Warm-up</h2>
                 <p class="mb-2">How does the punctuation change the function of these sentences?</p>
                 <p class="italic">1. The calibration is complete.</p>
                 <p class="italic">2. Is the calibration complete?</p>
@@ -155,12 +179,33 @@
             </div>
         </div>
         
+        <!-- NEW: Key Vocabulary -->
+        <div class="card">
+            <h2 class="text-2xl font-bold mb-4">5. Key Vocabulary</h2>
+            <ul class="space-y-3">
+                <li><strong>Direct Question (Interrogative Sentence):</strong> A sentence that asks for information directly and ends with a question mark (?).
+                    <br><span class="text-gray-600 italic">Example: Have you checked the logs?</span>
+                </li>
+                <li><strong>Indirect Question:</strong> A statement that reports or describes a question. It ends with a period (.).
+                    <br><span class="text-gray-600 italic">Example: The supervisor asked if I had checked the logs.</span>
+                </li>
+                <li><strong>Declarative Sentence:</strong> A sentence that makes a statement or declares something. It ends with a period (.).
+                    <br><span class="text-gray-600 italic">Example: I have checked the logs.</span>
+                </li>
+            </ul>
+        </div>
+
         <!-- Presentation -->
         <div class="card">
-            <h2 class="text-2xl font-bold mb-4">4. Presentation: Two Key Question Mark Rules</h2>
+            <h2 class="text-2xl font-bold mb-4">6. Structure: Two Key Question Mark Rules</h2>
+            <div class="my-4 rounded-lg overflow-hidden shadow-lg">
+                <div class="relative w-full" style="padding-top: 56.25%;"> <!-- 16:9 aspect ratio -->
+                    <iframe class="absolute top-0 left-0 w-full h-full" src="https://www.youtube.com/embed/KCR3krN5lZc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+            </div>
             <div class="space-y-6">
                 <!-- Rule 1 -->
-                 <div>
+                <div>
                     <h3 class="text-xl font-semibold">Rule 1: Use for Direct Questions</h3>
                     <p class="mt-1">A question mark is used at the end of an interrogative sentence, which is a sentence that asks a direct question.</p>
                     <p class="mt-2 p-3 bg-gray-100 rounded-md"><b>Example:</b> What were the results of the stress test<span class="font-bold text-blue-700">?</span></p>
@@ -176,9 +221,9 @@
             </div>
         </div>
 
-        <!-- NEW Interactive Practice: Drag & Drop -->
+        <!-- Interactive Practice: Drag & Drop -->
         <div class="card">
-            <h2 class="text-2xl font-bold mb-4">5. Interactive Practice: Drag & Drop</h2>
+            <h2 class="text-2xl font-bold mb-4">7. Interactive Practice: Drag & Drop</h2>
             <div class="flex items-center space-x-4 p-4 bg-gray-100 rounded-lg">
                 <p>Drag this question mark:</p>
                 <div id="question-mark-bank">
@@ -195,7 +240,7 @@
 
         <!-- Practice -->
         <div class="card">
-            <h2 class="text-2xl font-bold mb-4">6. Practice</h2>
+            <h2 class="text-2xl font-bold mb-4">8. Practice</h2>
             <p class="mb-4">Choose the option that is punctuated correctly.</p>
             <div id="practice-section" class="space-y-6">
                 <!-- Practice questions will be injected here by JS -->
@@ -207,7 +252,7 @@
 
         <!-- Assessment -->
         <div class="card">
-            <h2 class="text-2xl font-bold mb-4">7. Assessment</h2>
+            <h2 class="text-2xl font-bold mb-4">9. Assessment</h2>
             <p class="mb-4">Choose the option that is punctuated correctly and most professionally.</p>
             <div id="assessment-section" class="space-y-6">
                  <!-- Assessment questions will be injected here by JS -->
@@ -219,7 +264,7 @@
         
         <!-- Assignment -->
         <div class="card">
-            <h2 class="text-2xl font-bold mb-4">8. Assignment: Final Quiz</h2>
+            <h2 class="text-2xl font-bold mb-4">10. Assignment: Final Quiz</h2>
             <p class="mb-4">Choose the option that is punctuated correctly.</p>
             <div id="assignment-section" class="space-y-6">
                 <!-- Assignment questions will be injected here by JS -->
@@ -265,11 +310,11 @@
                 question: "Which sentence is punctuated correctly?",
                 options: [
                     "She asked what time the meeting starts?",
-                    "I wonder if the new server is online?",
+                    "I wonder if the new server is online.",
                     "Can you please send me the file."
                 ],
-                answer: 2,
-                explanation: "Even though this is phrased politely, it is still a direct question (a request) and should end with a question mark. The first two options are indirect questions."
+                answer: 1,
+                explanation: "An indirect question, like 'I wonder if...', reports a question and correctly ends with a period. Option 0 is an indirect question that incorrectly uses a question mark, and Option 2 is a direct request that incorrectly uses a period."
             },
             {
                 question: "Select the correctly punctuated sentence.",
@@ -279,7 +324,7 @@
                     "Why did the system crash?"
                 ],
                 answer: 2,
-                explanation: "Rule 1: This is a direct question starting with 'Why' and must end with a question mark. Option 1 is incorrect, and Option 2 is an indirect question."
+                explanation: "Rule 1: This is a direct question starting with 'Why' and must end with a question mark. Option 0 is incorrect, and Option 1 is a correctly punctuated indirect question."
             }
         ];
 
@@ -292,7 +337,7 @@
                     "I need you to confirm the power specifications?"
                 ],
                 answer: 0,
-                explanation: "This is a polite request phrased as a direct question and correctly ends with a question mark. Option 2 is incorrect, and Option 3 is a statement that incorrectly uses a question mark."
+                explanation: "This is a polite request phrased as a direct question and correctly ends with a question mark. Option 1 is incorrect, and Option 2 is a statement that incorrectly uses a question mark."
             },
             {
                 question: "Which sentence is an indirect question and correctly punctuated?",
@@ -308,11 +353,11 @@
                 question: "Which of the following would be inappropriate in a formal technical report?",
                 options: [
                     "The results were inconclusive.",
-                    "What were the reasons for the component failure?",
+                    "The report investigates the reasons for the component failure.",
                     "Did the engineers not consider the thermal expansion?"
                 ],
                 answer: 2,
-                explanation: "Formal technical reports should present findings, not ask rhetorical or accusatory questions. Questions are for inquiry (e.g., in emails or meetings), while reports are for stating facts and analysis."
+                explanation: "Formal technical reports should present findings and analysis, not ask rhetorical or accusatory questions. Questions are for inquiry (e.g., in emails or meetings), while reports are for stating facts."
             }
         ];
 
@@ -426,7 +471,7 @@
             if(isAssignment) {
                 if(!selectedRadio.parentElement.hasAttribute('data-scored')) {
                      if(userAnswer === q.answer) {
-                       assignmentScore++;
+                        assignmentScore++;
                     }
                     assignmentAnswered++;
                     radios.forEach(r => r.parentElement.setAttribute('data-scored', 'true'));
