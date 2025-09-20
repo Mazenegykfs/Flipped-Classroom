@@ -9,10 +9,10 @@
     <style>
         body {
             font-family: 'Inter', sans-serif;
-            background: linear-gradient(to bottom, #ffffff, #e0f7fa); /* White to Light Blue Gradient */
+            background-color: #e0f7fa; /* Light Blue Background */
         }
         .header {
-            background-color: #00796b;
+            background-color: #00897B; /* Brighter Teal Header */
             color: white;
             padding: 1rem;
             font-size: 1.25rem;
@@ -20,13 +20,14 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
+            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
         }
         .card {
             background-color: white;
             border-radius: 0.75rem;
             padding: 1.5rem;
             margin-bottom: 1.5rem;
-            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+            box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1); /* Enhanced Shadow */
         }
         .btn {
             padding: 0.5rem 1rem;
@@ -40,14 +41,14 @@
             transform: translateY(-2px);
         }
         .btn-green {
-            background-color: #4CAF50; /* Green */
+            background-color: #4CAF50; /* Green for accept/execute */
             color: white;
         }
         .btn-green:hover {
             background-color: #45a049;
         }
         .btn-red {
-            background-color: #f44336; /* Red */
+            background-color: #f44336; /* Red for cancel/reset */
             color: white;
         }
         .btn-red:hover {
@@ -129,7 +130,7 @@
 <body>
 
     <header class="header">
-        <span>Using Technology-Enhanced Flipped Classroom Model to Develop EFL Engineering Students’ Punctuation Marks</span>
+        <span>Developed by Dr. Mazen Badawy – Doctorate of English Teaching & Testing</span>
         <a href="https://mazenegykfs.github.io/Flipped-Classroom/index.html" class="btn btn-home">Home</a>
     </header>
 
@@ -168,9 +169,17 @@
         <!-- Presentation -->
         <div class="card">
             <h2 class="text-2xl font-bold mb-4">4. Presentation: Two Key Exclamation Mark Rules</h2>
+            
+            <!-- YouTube Video -->
+            <div class="my-6">
+                <div class="aspect-w-16 aspect-h-9">
+                    <iframe class="w-full h-full rounded-lg shadow-lg" src="https://www.youtube.com/embed/jmWxw7ENXZk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+            </div>
+
             <div class="space-y-6">
                 <!-- Rule 1 -->
-                 <div>
+                <div>
                     <h3 class="text-xl font-semibold">Rule 1: Use for Genuine Warnings and Commands</h3>
                     <p class="mt-1">In technical writing, the primary acceptable use of an exclamation mark is for a direct warning, a caution, or a strong command that relates to safety or critical operations.</p>
                     <p class="mt-2 p-3 bg-gray-100 rounded-md"><b>Correct:</b> Warning<span class="font-bold text-blue-700">!</span> High voltage.</p>
@@ -260,6 +269,11 @@
     </div>
 
     <script>
+        // To support aspect ratio in Tailwind, we need this little script if not using the plugin
+        // But the cdn version of tailwind should support it.
+        // If it doesn't, this would be a fallback:
+        // document.head.insertAdjacentHTML('beforeend', '<style>.aspect-w-16{padding-bottom:56.25%;position:relative;width:100%;}.aspect-h-9{/* ... */}.aspect-w-16>*, .aspect-h-9>*{position:absolute;height:100%;width:100%;top:0;right:0;bottom:0;left:0;}</style>');
+
         const practiceQuestions = [
             {
                 question: "Which sentence uses the exclamation mark correctly for a technical context?",
@@ -436,7 +450,7 @@
             if(isAssignment) {
                 if(!selectedRadio.parentElement.hasAttribute('data-scored')) {
                      if(userAnswer === q.answer) {
-                       assignmentScore++;
+                        assignmentScore++;
                     }
                     assignmentAnswered++;
                     radios.forEach(r => r.parentElement.setAttribute('data-scored', 'true'));
@@ -540,3 +554,4 @@
 
 </body>
 </html>
+
