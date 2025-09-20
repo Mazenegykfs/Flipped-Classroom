@@ -9,15 +9,17 @@
     <style>
         body {
             font-family: 'Inter', sans-serif;
-            background: linear-gradient(to bottom, #ffffff, #e0f7fa); /* White to Light Blue Gradient */
+            background-color: #e0f7fa; /* Solid Light Blue background */
         }
         .header {
             background-color: #00796b;
             color: white;
             padding: 1rem;
-            text-align: center;
             font-size: 1.25rem;
             font-weight: 600;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
         .card {
             background-color: white;
@@ -27,7 +29,8 @@
             box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
         }
         .btn {
-            padding: 0.5rem 1rem;
+            padding: 0.75rem 1.5rem; /* Larger buttons */
+            font-size: 1rem;
             border-radius: 0.5rem;
             font-weight: 600;
             cursor: pointer;
@@ -50,6 +53,13 @@
         }
         .btn-red:hover {
             background-color: #e53935;
+        }
+         .btn-blue {
+            background-color: #2196F3;
+            color: white;
+        }
+        .btn-blue:hover {
+            background-color: #1976D2;
         }
         h1, h2, h3 {
             color: #004d40;
@@ -121,7 +131,8 @@
 <body>
 
     <header class="header">
-        Using A Technology-Enhanced Flipped Classroom Model to Develop EFL Engineering Students’ Punctuation Marks
+        <span>Developed by Dr. Mazen Badawy – Doctorate of English Teaching & Testing</span>
+        <a href="https://mazenegykfs.github.io/Flipped-Classroom/index.html" class="btn btn-blue">Home</a>
     </header>
 
     <div class="container mx-auto p-4 md:p-8">
@@ -279,7 +290,7 @@
         <div class="card text-center">
             <h2 class="text-2xl font-bold mb-4">Download Worksheet</h2>
             <p class="mb-4">Click the button below to download a text file of this lesson's exercises for offline practice.</p>
-            <button onclick="downloadWorksheet()" class="btn btn-green text-lg">Export Worksheet (.txt)</button>
+            <button onclick="downloadWorksheet()" class="btn btn-green">Export Worksheet (.txt)</button>
         </div>
 
         <!-- Further Reading Section -->
@@ -506,7 +517,7 @@
 
         function downloadWorksheet() {
             let worksheetContent = `Worksheet: Using Question Marks in Technical Writing\n`;
-            worksheetContent += `Using A Technology-Enhanced Flipped Classroom Model to Develop EFL Engineering Students’ Punctuation Marks\n`;
+            worksheetContent += `Developed by Dr. Mazen Badawy – Doctorate of English Teaching & Testing\n`;
             worksheetContent += `=================================================================\n\n`;
 
             worksheetContent += `** Part 1: Key Rules **\n\n`;
@@ -575,6 +586,3 @@
 
 </body>
 </html>
-
-
-
