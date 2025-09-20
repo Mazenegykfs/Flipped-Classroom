@@ -124,12 +124,29 @@
             border: 2px solid #f44336;
             background-color: #ffebee;
         }
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 aspect ratio */
+            height: 0;
+            overflow: hidden;
+            max-width: 100%;
+            border-radius: 0.75rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+        }
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
     </style>
 </head>
 <body>
 
     <header class="header">
-        <span>Using A Technology-Enhanced Flipped Classroom Model to Develop EFL Engineering Students’ Punctuation Marks</span>
+        <span>Developed by Dr. Mazen Badawy – Doctorate of English Teaching & Testing</span>
         <a href="https://mazenegykfs.github.io/Flipped-Classroom/index.html" class="btn btn-home">Home</a>
     </header>
 
@@ -147,14 +164,33 @@
             </ul>
         </div>
 
+        <!-- Values -->
+        <div class="card">
+            <h2 class="text-2xl font-bold mb-4">2. Values</h2>
+            <ul class="list-disc list-inside space-y-2">
+                <li><strong>Clarity:</strong> Proper punctuation ensures that technical information is understood without ambiguity.</li>
+                <li><strong>Precision:</strong> Using periods correctly reflects accuracy and attention to detail.</li>
+                <li><strong>Professionalism:</strong> Correct grammar and punctuation are hallmarks of professional communication.</li>
+            </ul>
+        </div>
+
+        <!-- Life Skills -->
+        <div class="card">
+            <h2 class="text-2xl font-bold mb-4">3. Life Skills</h2>
+            <ul class="list-disc list-inside space-y-2">
+                <li><strong>Effective Communication:</strong> Mastering punctuation is fundamental to writing clearly in any professional setting.</li>
+                <li><strong>Attention to Detail:</strong> Focusing on small details like periods improves the overall quality of your work.</li>
+            </ul>
+        </div>
+
         <!-- Review & Warm-up -->
         <div class="grid md:grid-cols-2 gap-6">
             <div class="card">
-                <h2 class="text-2xl font-bold mb-4">2. Review</h2>
+                <h2 class="text-2xl font-bold mb-4">4. Review</h2>
                 <p class="mb-2">A <strong>period (.)</strong>, also known as a full stop, is a punctuation mark used to signal the end of a complete declarative sentence (a statement) or a mild imperative sentence (a command).</p>
             </div>
             <div class="card">
-                <h2 class="text-2xl font-bold mb-4">3. Warm-up</h2>
+                <h2 class="text-2xl font-bold mb-4">5. Warm-up</h2>
                 <p class="mb-2">How does punctuation create clarity in these examples?</p>
                 <p class="italic">1. The system rebooted the update was successful the server is now online.</p>
                 <p class="italic">2. The system rebooted. The update was successful. The server is now online.</p>
@@ -165,9 +201,23 @@
             </div>
         </div>
         
-        <!-- Presentation -->
+        <!-- Vocabulary -->
         <div class="card">
-            <h2 class="text-2xl font-bold mb-4">4. Presentation: Two Key Period Rules</h2>
+            <h2 class="text-2xl font-bold mb-4">6. Vocabulary</h2>
+            <ul class="space-y-3">
+                <li><p><strong>Declarative Sentence:</strong> A sentence that makes a statement. <br><em>Example: The circuit board is fully assembled.</em></p></li>
+                <li><p><strong>Imperative Sentence:</strong> A sentence that gives a command or makes a request. <br><em>Example: Please check the voltage readings.</em></p></li>
+                <li><p><strong>Run-on Sentence:</strong> Two or more complete sentences joined without proper punctuation. <br><em>Example: The test failed the engine overheated.</em></p></li>
+                <li><p><strong>Sentence Fragment:</strong> A group of words that does not express a complete thought. <br><em>Example: Because the data was incomplete.</em></p></li>
+            </ul>
+        </div>
+
+        <!-- Structure -->
+        <div class="card">
+            <h2 class="text-2xl font-bold mb-4">7. Structure: Two Key Period Rules</h2>
+            <div class="video-container">
+                <iframe src="https://www.youtube.com/embed/pbYnXAiUW1A" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </div>
             <div class="space-y-6">
                 <!-- Rule 1 -->
                  <div>
@@ -186,9 +236,9 @@
             </div>
         </div>
 
-        <!-- NEW Interactive Practice: Drag & Drop -->
+        <!-- Interactive Practice: Drag & Drop -->
         <div class="card">
-            <h2 class="text-2xl font-bold mb-4">5. Interactive Practice: Drag & Drop</h2>
+            <h2 class="text-2xl font-bold mb-4">8. Interactive Practice: Drag & Drop</h2>
             <div class="flex items-center space-x-4 p-4 bg-gray-100 rounded-lg">
                 <p>Drag this period:</p>
                 <div id="period-bank">
@@ -205,7 +255,7 @@
 
         <!-- Practice -->
         <div class="card">
-            <h2 class="text-2xl font-bold mb-4">6. Practice</h2>
+            <h2 class="text-2xl font-bold mb-4">9. Practice</h2>
             <p class="mb-4">Choose the option that is punctuated correctly.</p>
             <div id="practice-section" class="space-y-6">
                 <!-- Practice questions will be injected here by JS -->
@@ -217,7 +267,7 @@
 
         <!-- Assessment -->
         <div class="card">
-            <h2 class="text-2xl font-bold mb-4">7. Assessment</h2>
+            <h2 class="text-2xl font-bold mb-4">10. Assessment</h2>
             <p class="mb-4">Choose the option that is punctuated correctly and most professionally.</p>
             <div id="assessment-section" class="space-y-6">
                  <!-- Assessment questions will be injected here by JS -->
@@ -229,7 +279,7 @@
         
         <!-- Assignment -->
         <div class="card">
-            <h2 class="text-2xl font-bold mb-4">8. Assignment: Final Quiz</h2>
+            <h2 class="text-2xl font-bold mb-4">11. Assignment: Final Quiz</h2>
             <p class="mb-4">Choose the option that is punctuated correctly.</p>
             <div id="assignment-section" class="space-y-6">
                 <!-- Assignment questions will be injected here by JS -->
@@ -436,7 +486,7 @@
             if(isAssignment) {
                 if(!selectedRadio.parentElement.hasAttribute('data-scored')) {
                      if(userAnswer === q.answer) {
-                       assignmentScore++;
+                        assignmentScore++;
                     }
                     assignmentAnswered++;
                     radios.forEach(r => r.parentElement.setAttribute('data-scored', 'true'));
@@ -540,3 +590,4 @@
 
 </body>
 </html>
+
