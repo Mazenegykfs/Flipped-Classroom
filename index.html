@@ -9,7 +9,7 @@
     <style>
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #f0f9ff; /* Lighter blue background for the whole page */
+            background-color: #f0f9ff; /* Light blue background for the whole page */
         }
         .header {
             background-color: #00796b;
@@ -29,12 +29,69 @@
         h1, h2, h3, h4 {
             color: #004d40;
         }
+
+        /* Chatbot Floating Button */
+        #open-chat-btn {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            background-color: #0ea5e9; /* sky-500 */
+            color: white;
+            width: 64px;
+            height: 64px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.2), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            z-index: 999;
+        }
+        #open-chat-btn:hover {
+            background-color: #0284c7; /* sky-600 */
+            transform: scale(1.1);
+        }
+
+        /* Chatbot Modal */
+        #chat-modal {
+            position: fixed;
+            inset: 0;
+            background-color: rgba(0, 0, 0, 0.5);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            pointer-events: none;
+        }
+        #chat-modal.visible {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        /* Custom scrollbar for a cleaner look */
+        #chat-window::-webkit-scrollbar { width: 8px; }
+        #chat-window::-webkit-scrollbar-track { background: #f1f5f9; }
+        #chat-window::-webkit-scrollbar-thumb { background-color: #38bdf8; border-radius: 20px; border: 3px solid #f1f5f9; }
+        
+        .chat-bubble { max-width: 80%; word-wrap: break-word; }
+        .bot-bubble { background-color: #ffffff; border: 1px solid #e2e8f0; }
+        .user-bubble { background-color: #dcfce7; align-self: flex-end; }
+        
+        .typing-indicator { display: flex; align-items: center; padding: 1rem; }
+        .typing-indicator span { height: 10px; width: 10px; margin: 0 2px; background-color: #94a3b8; border-radius: 50%; display: inline-block; animation: bounce 1.4s infinite ease-in-out both; }
+        .typing-indicator span:nth-child(1) { animation-delay: -0.32s; }
+        .typing-indicator span:nth-child(2) { animation-delay: -0.16s; }
+        @keyframes bounce { 0%, 80%, 100% { transform: scale(0); } 40% { transform: scale(1.0); } }
     </style>
 </head>
 <body>
 
     <header class="header">
-Using a Technology-Enhanced Flipped Classroom to Improve EFL Engineering Students’ Punctuation Marks    </header>
+        Using a Technology-Enhanced Flipped Classroom to Improve EFL Engineering Students’ Punctuation Marks
+    </header>
 
     <div class="flex flex-col md:flex-row">
         <!-- Sidebar Navigation -->
@@ -86,18 +143,54 @@ Using a Technology-Enhanced Flipped Classroom to Improve EFL Engineering Student
                             <h5 class="font-semibold">Phase 1: The Individual Space (Before Class)</h5>
                             <p class="ml-4 mt-1"><strong class="font-semibold">What:</strong> Students engage with the interactive, self-paced web lesson on their own time. They learn the core rules and complete the initial practice exercises.</p>
                             <p class="ml-4 mt-1"><strong class="font-semibold">Why:</strong> This empowers students to take ownership of their learning and ensures they arrive in class with a foundational understanding of the material. The technology provides instant feedback that a traditional lecture cannot.</p>
-                        </div>
+                         </div>
                          <div>
                             <h5 class="font-semibold">Phase 2: The Group Space (During Class)</h5>
                             <p class="ml-4 mt-1"><strong class="font-semibold">What:</strong> Classroom time is transformed into a hands-on workshop. The instructor's role shifts from "lecturer" to "facilitator." Students engage in collaborative activities, apply their knowledge to complex problems, and receive targeted support.</p>
                             <p class="ml-4 mt-1"><strong class="font-semibold">Why:</strong> This is where true learning is solidified. Students move from knowing the rules to using the rules in authentic contexts, clarifying misconceptions, and learning from one another.</p>
-                        </div>
+                         </div>
                     </div>
                 </div>
             </div>
 
         </main>
     </div>
+
+    <!-- CHATBOT UI -->
+    <button id="open-chat-btn" title="Open AI Assistant">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" viewBox="0 0 20 20" fill="currentColor">
+            <path d="M10 2a6 6 0 00-6 6v3.586l-1.707 1.707A1 1 0 003 15v1a1 1 0 001 1h12a1 1 0 001-1v-1a1 1 0 00-.293-.707L16 11.586V8a6 6 0 00-6-6zM10 18a3 3 0 01-3-3h6a3 3 0 01-3 3z" />
+        </svg>
+    </button>
+
+    <div id="chat-modal" class="hidden">
+        <div class="w-full max-w-2xl h-full sm:h-[80vh] flex flex-col bg-slate-50 rounded-2xl shadow-xl border border-gray-200 transform scale-95 transition-transform duration-300">
+             <!-- Chatbot Header -->
+            <header class="bg-gradient-to-r from-sky-500 to-indigo-500 text-white text-center p-3 shadow-md rounded-t-2xl flex justify-between items-center">
+                <h1 class="text-lg font-bold flex-1 text-center">TechWrite AI Assistant</h1>
+                <button id="close-chat-btn" class="text-white hover:bg-white/20 rounded-full p-1">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" /></svg>
+                </button>
+            </header>
+            <!-- Chat Window -->
+            <div id="chat-window" class="flex-1 p-6 space-y-4 overflow-y-auto">
+                <div class="chat-bubble bot-bubble p-4 rounded-lg rounded-bl-none">
+                    <p class="font-bold text-sky-700">TechWrite Tutor</p>
+                    <p class="text-gray-700">Welcome! I am your AI assistant. Ask me anything about the technical writing and punctuation lessons on this page.</p>
+                </div>
+            </div>
+            <!-- Input Area -->
+            <div class="p-4 bg-white border-t border-gray-200 rounded-b-2xl">
+                <form id="chat-form" class="flex items-center space-x-4">
+                    <input id="user-input" type="text" placeholder="Ask about punctuation, citations, etc..." class="flex-1 p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-sky-500 focus:outline-none" autocomplete="off">
+                    <button id="send-btn" type="submit" class="bg-green-500 hover:bg-green-600 text-white font-bold p-3 rounded-lg shadow-md hover:shadow-lg transition-transform duration-200 transform hover:scale-105">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" /></svg>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+
 
     <script>
         const lessons = [
@@ -124,6 +217,138 @@ Using a Technology-Enhanced Flipped Classroom to Improve EFL Engineering Student
                 nav.appendChild(link);
             });
         });
+
+        // --- CHATBOT LOGIC ---
+
+        const chatModal = document.getElementById('chat-modal');
+        const openChatBtn = document.getElementById('open-chat-btn');
+        const closeChatBtn = document.getElementById('close-chat-btn');
+        const chatWindow = document.getElementById('chat-window');
+        const chatForm = document.getElementById('chat-form');
+        const userInput = document.getElementById('user-input');
+        const sendBtn = document.getElementById('send-btn');
+
+        const API_MODEL = 'gemini-2.5-flash-preview-05-20';
+        const API_KEY = "AIzaSyB8IlKHHSJY28PIs_Zob2d7-HSD6UyXPFo";
+
+        openChatBtn.addEventListener('click', () => {
+            chatModal.classList.remove('hidden');
+            chatModal.classList.add('visible');
+            setTimeout(() => chatModal.querySelector('div').classList.remove('scale-95'), 10); // For entry animation
+            userInput.focus();
+        });
+
+        closeChatBtn.addEventListener('click', () => {
+            chatModal.querySelector('div').classList.add('scale-95')
+            chatModal.classList.remove('visible');
+             setTimeout(() => chatModal.classList.add('hidden'), 300); // Wait for transition
+        });
+
+        const lessonTitles = lessons.map(l => l.title).join(', ');
+        const SYSTEM_PROMPT = `You are an expert AI tutor named 'TechWrite Tutor', specializing in technical writing for engineering students. You are an assistant for a course homepage developed by Dr. Mazen Badawy and Dr. Nourhan Adel El-Banna. Your purpose is to answer student questions based on the course materials.
+
+        **Your Knowledge Base:**
+
+        1.  **Homepage Content:** You are an AI assistant for a webpage titled "Using a Technology-Enhanced Flipped Classroom to Improve EFL Engineering Students’ Punctuation Marks". The page outlines a two-phase flipped classroom model (Individual Space before class, Group Space during class).
+
+        2.  **Course Lessons:** You are an expert on the following specific punctuation and writing topics: ${lessonTitles}.
+
+        3.  **Core Technical Writing Guidelines (from previous training):**
+            * **Report Structure:** You know the detailed structure of an engineering report: Abstract (150-250 words, past tense, no citations), Introduction (Background, Problem Statement, Objectives, Scope, Significance), Literature Review, Methodology, Implementation, and the final Discussion/Conclusion/Recommendations section.
+            * **Formal Style:** You must promote formal, objective language. Advise against contractions, clichés, and personal pronouns (except in specific contexts). Prefer Latinate verbs (e.g., 'investigate' not 'look into').
+            * **Visuals & Tables:** All figures and tables MUST be numbered, have a title/caption, and be referenced in the text.
+            * **Citations:** You must strictly enforce the IEEE citation style, providing examples for books, articles, etc., when asked (e.g., "[1] A. Author, 'Title,' *Journal*, vol. x, no. x, pp. xx-xx, Month Year.").
+
+        **Interaction Rules:**
+        * Your tone is encouraging, professional, and clear.
+        * When a student asks a question (e.g., "how do I use a colon?"), explain the rule and provide an engineering-specific example.
+        * If asked about the course structure, explain the flipped classroom model.
+        * Use Markdown (bolding, lists) to format your answers for readability.
+        * Do not answer questions outside the scope of technical writing, punctuation, or the provided course context.`;
+        
+        function addMessage(message, sender) {
+            const bubble = document.createElement('div');
+            bubble.className = `chat-bubble p-4 rounded-lg ${sender === 'user' ? 'user-bubble' : 'bot-bubble'}`;
+            let formattedMessage = message.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>').replace(/\n/g, '<br>');
+            bubble.innerHTML = `<p>${formattedMessage}</p>`;
+            chatWindow.appendChild(bubble);
+            chatWindow.scrollTop = chatWindow.scrollHeight;
+        }
+
+        function toggleTypingIndicator(show) {
+            let indicator = document.getElementById('typing-indicator');
+            if (show && !indicator) {
+                indicator = document.createElement('div');
+                indicator.id = 'typing-indicator';
+                indicator.className = 'typing-indicator chat-bubble bot-bubble';
+                indicator.innerHTML = '<span></span><span></span><span></span>';
+                chatWindow.appendChild(indicator);
+                chatWindow.scrollTop = chatWindow.scrollHeight;
+            } else if (!show && indicator) {
+                indicator.remove();
+            }
+        }
+        
+        async function handleSendMessage(e) {
+            e.preventDefault();
+            if (!API_KEY || API_KEY === "YOUR_API_KEY_HERE") {
+                 addMessage("The AI Assistant is not configured correctly. Please notify your instructor.", 'bot');
+                 return;
+            }
+            const userMessage = userInput.value.trim();
+            if (!userMessage) return;
+
+            addMessage(userMessage, 'user');
+            userInput.value = '';
+            userInput.disabled = true;
+            sendBtn.disabled = true;
+
+            toggleTypingIndicator(true);
+
+            try {
+                const botResponse = await callGeminiApi(userMessage);
+                addMessage(botResponse, 'bot');
+            } catch (error) {
+                console.error('API Call Error:', error);
+                addMessage('Sorry, I encountered an error. Please try again later.', 'bot');
+            } finally {
+                toggleTypingIndicator(false);
+                userInput.disabled = false;
+                sendBtn.disabled = false;
+                userInput.focus();
+            }
+        }
+
+        async function callGeminiApi(userQuery) {
+            const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/${API_MODEL}:generateContent?key=${API_KEY}`;
+            const payload = {
+                contents: [{ parts: [{ text: userQuery }] }],
+                systemInstruction: { parts: [{ text: SYSTEM_PROMPT }] },
+            };
+
+            const response = await fetch(apiUrl, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(payload)
+            });
+
+            if (!response.ok) {
+                throw new Error(`API Error: ${response.status} ${response.statusText}`);
+            }
+
+            const result = await response.json();
+            const candidate = result.candidates?.[0];
+            if (candidate && candidate.content?.parts?.[0]?.text) {
+                return candidate.content.parts[0].text;
+            } else {
+                if (result.promptFeedback && result.promptFeedback.blockReason) {
+                    return `I'm sorry, I can't respond to that for safety reasons: ${result.promptFeedback.blockReason}.`;
+                }
+                throw new Error('Invalid response structure from API');
+            }
+        }
+
+        chatForm.addEventListener('submit', handleSendMessage);
     </script>
 
 </body>
