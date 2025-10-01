@@ -95,6 +95,35 @@
             max-height: 150px; /* Adjust as needed */
             padding: 0.75rem;
         }
+
+        /* --- CHATBOT STYLES --- */
+        #chat-modal {
+            position: fixed;
+            inset: 0;
+            background-color: rgba(0, 0, 0, 0.5);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            pointer-events: none;
+        }
+        #chat-modal.visible {
+            opacity: 1;
+            pointer-events: auto;
+        }
+        #chat-window::-webkit-scrollbar { width: 8px; }
+        #chat-window::-webkit-scrollbar-track { background: #f1f5f9; }
+        #chat-window::-webkit-scrollbar-thumb { background-color: #38bdf8; border-radius: 20px; border: 3px solid #f1f5f9; }
+        .chat-bubble { max-width: 80%; word-wrap: break-word; }
+        .bot-bubble { background-color: #ffffff; border: 1px solid #e2e8f0; }
+        .user-bubble { background-color: #dcfce7; align-self: flex-end; }
+        .typing-indicator { display: flex; align-items: center; padding: 1rem; }
+        .typing-indicator span { height: 10px; width: 10px; margin: 0 2px; background-color: #94a3b8; border-radius: 50%; display: inline-block; animation: bounce 1.4s infinite ease-in-out both; }
+        .typing-indicator span:nth-child(1) { animation-delay: -0.32s; }
+        .typing-indicator span:nth-child(2) { animation-delay: -0.16s; }
+        @keyframes bounce { 0%, 80%, 100% { transform: scale(0); } 40% { transform: scale(1.0); } }
     </style>
 </head>
 <body>
@@ -236,6 +265,41 @@
                 <li><a href="https://owl.purdue.edu/owl/general_writing/punctuation/parentheses.html" target="_blank" class="text-blue-600 hover:underline">Purdue OWL: Parentheses</a></li>
                  <li><a href="https://www.grammarly.com/blog/parentheses/" target="_blank" class="text-blue-600 hover:underline">Grammarly Blog: How to Use Parentheses</a></li>
             </ul>
+        </div>
+    </div>
+    
+    <!-- CHATBOT UI -->
+    <div class="fixed bottom-8 right-8 z-[999] flex flex-col items-center">
+        <p class="font-semibold text-gray-800 bg-white/90 backdrop-blur-sm px-4 py-2 rounded-full shadow-lg mb-2">TechWrite AI Assistant</p>
+        <button id="open-chat-btn" title="Open AI Assistant" class="bg-sky-500 text-white w-16 h-16 rounded-full flex items-center justify-center shadow-lg cursor-pointer transition-transform duration-300 hover:bg-sky-600 hover:scale-110">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" viewBox="0 0 20 20" fill="currentColor">
+                <path d="M10 2a6 6 0 00-6 6v3.586l-1.707 1.707A1 1 0 003 15v1a1 1 0 001 1h12a1 1 0 001-1v-1a1 1 0 00-.293-.707L16 11.586V8a6 6 0 00-6-6zM10 18a3 3 0 01-3-3h6a3 3 0 01-3 3z" />
+            </svg>
+        </button>
+    </div>
+
+    <div id="chat-modal" class="hidden">
+        <div class="w-full max-w-2xl h-full sm:h-[80vh] flex flex-col bg-slate-50 rounded-2xl shadow-xl border border-gray-200 transform scale-95 transition-transform duration-300">
+            <header class="bg-gradient-to-r from-sky-500 to-indigo-500 text-white text-center p-3 shadow-md rounded-t-2xl flex justify-between items-center">
+                <h1 class="text-lg font-bold flex-1 text-center">TechWrite AI Assistant</h1>
+                <button id="close-chat-btn" class="text-white hover:bg-white/20 rounded-full p-1">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" /></svg>
+                </button>
+            </header>
+            <div id="chat-window" class="flex-1 p-6 space-y-4 overflow-y-auto">
+                <div class="chat-bubble bot-bubble p-4 rounded-lg rounded-bl-none">
+                    <p class="font-bold text-sky-700">TechWrite Tutor</p>
+                    <p class="text-gray-700">Hello! Ask me anything about the difference between **parentheses** and **quotation marks**.</p>
+                </div>
+            </div>
+            <div class="p-4 bg-white border-t border-gray-200 rounded-b-2xl">
+                <form id="chat-form" class="flex items-center space-x-4">
+                    <input id="user-input" type="text" placeholder='e.g., When should I use parentheses?' class="flex-1 p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-sky-500 focus:outline-none" autocomplete="off">
+                    <button id="send-btn" type="submit" class="bg-green-500 hover:bg-green-600 text-white font-bold p-3 rounded-lg shadow-md hover:shadow-lg transition-transform duration-200 transform hover:scale-105">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" /></svg>
+                    </button>
+                </form>
+            </div>
         </div>
     </div>
 
@@ -512,11 +576,139 @@
             createMCQSection('assessment-section', assessmentQuestions);
             createMCQSection('assignment-section', assignmentQuestions, true);
         });
+    </script>
+     <!-- --- CHATBOT SCRIPT --- -->
+     <script>
+        const chatModal = document.getElementById('chat-modal');
+        const openChatBtn = document.getElementById('open-chat-btn');
+        const closeChatBtn = document.getElementById('close-chat-btn');
+        const chatWindow = document.getElementById('chat-window');
+        const chatForm = document.getElementById('chat-form');
+        const userInput = document.getElementById('user-input');
+        const sendBtn = document.getElementById('send-btn');
 
+        const API_MODEL = 'gemini-2.5-flash-preview-05-20';
+        const API_KEY = "AIzaSyB8IlKHHSJY28PIs_Zob2d7-HSD6UyXPFo";
+
+        openChatBtn.addEventListener('click', () => {
+            chatModal.classList.remove('hidden');
+            chatModal.classList.add('visible');
+            setTimeout(() => chatModal.querySelector('div').classList.remove('scale-95'), 10);
+            userInput.focus();
+        });
+
+        closeChatBtn.addEventListener('click', () => {
+            chatModal.querySelector('div').classList.add('scale-95');
+            chatModal.classList.remove('visible');
+             setTimeout(() => chatModal.classList.add('hidden'), 300);
+        });
+
+        const SYSTEM_PROMPT = `You are an expert AI tutor named 'TechWrite Tutor', specializing in technical writing for engineering students. You are an assistant for a course page developed by Dr. Mazen Badawy and Dr. Nourhan Adel El-Banna. Your current focus is the lesson page titled "Parentheses ( ) vs. Quotation Marks (“ ”)".
+
+        **Your Knowledge Base:**
+
+        1.  **Current Lesson:** You are an expert on the rules for parentheses and quotation marks on this page. This includes:
+            * Using parentheses for non-essential information, acronyms, and asides (e.g., The sensor (Model X) is offline).
+            * Using quotation marks for direct quotes and titles of short works (e.g., The engineer said, "The test was successful.").
+            * The rule that commas and periods go inside closing quotation marks in American English.
+        
+        2.  **General Technical Writing Guidelines (from your core training):**
+            * **Report Structure:** You know the structure of an engineering report (Abstract, Introduction, etc.).
+            * **Formal Style:** You must promote formal, objective language. Advise against contractions and clichés. Prefer Latinate verbs (e.g., 'perform' not 'do').
+            * **Visuals & Tables:** Remind students that all figures and tables MUST be numbered, titled, and referenced in the text.
+            * **Citations:** You must strictly enforce the IEEE citation style when asked.
+
+        **Interaction Rules:**
+        * Your tone is encouraging, professional, and clear.
+        * When a student asks about parentheses or quotation marks, relate your answer directly to the rules taught in this lesson and provide a clear, engineering-specific example.
+        * If a question is about another punctuation mark, briefly answer it but gently guide them back to the main topic or suggest they visit the homepage for other lessons.
+        * Use Markdown (bolding, lists) to format your answers for readability.
+        * Do not answer questions outside the scope of technical writing and punctuation.`;
+        
+        function addMessage(message, sender) {
+            const bubble = document.createElement('div');
+            bubble.className = `chat-bubble p-4 rounded-lg ${sender === 'user' ? 'user-bubble' : 'bot-bubble'}`;
+            let formattedMessage = message.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>').replace(/\n/g, '<br>');
+            bubble.innerHTML = `<p>${formattedMessage}</p>`;
+            chatWindow.appendChild(bubble);
+            chatWindow.scrollTop = chatWindow.scrollHeight;
+        }
+
+        function toggleTypingIndicator(show) {
+            let indicator = document.getElementById('typing-indicator');
+            if (show && !indicator) {
+                indicator = document.createElement('div');
+                indicator.id = 'typing-indicator';
+                indicator.className = 'typing-indicator chat-bubble bot-bubble';
+                indicator.innerHTML = '<span></span><span></span><span></span>';
+                chatWindow.appendChild(indicator);
+                chatWindow.scrollTop = chatWindow.scrollHeight;
+            } else if (!show && indicator) {
+                indicator.remove();
+            }
+        }
+        
+        async function handleSendMessage(e) {
+            e.preventDefault();
+            if (!API_KEY || API_KEY === "YOUR_API_KEY_HERE") {
+                 addMessage("The AI Assistant is not configured correctly. Please notify your instructor.", 'bot');
+                 return;
+            }
+            const userMessage = userInput.value.trim();
+            if (!userMessage) return;
+
+            addMessage(userMessage, 'user');
+            userInput.value = '';
+            userInput.disabled = true;
+            sendBtn.disabled = true;
+
+            toggleTypingIndicator(true);
+
+            try {
+                const botResponse = await callGeminiApi(userMessage);
+                addMessage(botResponse, 'bot');
+            } catch (error) {
+                console.error('API Call Error:', error);
+                addMessage('Sorry, I encountered an error. Please try again later.', 'bot');
+            } finally {
+                toggleTypingIndicator(false);
+                userInput.disabled = false;
+                sendBtn.disabled = false;
+                userInput.focus();
+            }
+        }
+
+        async function callGeminiApi(userQuery) {
+            const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/${API_MODEL}:generateContent?key=${API_KEY}`;
+            const payload = {
+                contents: [{ parts: [{ text: userQuery }] }],
+                systemInstruction: { parts: [{ text: SYSTEM_PROMPT }] },
+            };
+
+            const response = await fetch(apiUrl, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(payload)
+            });
+
+            if (!response.ok) {
+                throw new Error(`API Error: ${response.status} ${response.statusText}`);
+            }
+
+            const result = await response.json();
+            const candidate = result.candidates?.[0];
+            if (candidate && candidate.content?.parts?.[0]?.text) {
+                return candidate.content.parts[0].text;
+            } else {
+                if (result.promptFeedback && result.promptFeedback.blockReason) {
+                    return `I'm sorry, I can't respond to that for safety reasons: ${result.promptFeedback.blockReason}.`;
+                }
+                throw new Error('Invalid response structure from API');
+            }
+        }
+
+        chatForm.addEventListener('submit', handleSendMessage);
     </script>
 
 </body>
 </html>
-
-
-
